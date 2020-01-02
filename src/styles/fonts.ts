@@ -1,0 +1,1 @@
+export const verdana = ['Verdana', 'Geneva', 'sans-serif'];
