@@ -1,7 +1,7 @@
 import React from 'react';
 import { fonts, scales, useStyle } from '../styles';
 import Icon from '@mdi/react';
-import { mdiZodiacAquarius } from '@mdi/js';
+import { mdiAtomVariant } from '@mdi/js';
 
 export default function Loading() {
   const css = useStyle({
@@ -23,7 +23,7 @@ export default function Loading() {
 
   return (
     <div {...css()}>
-      <Icon size={scales.size[2]} path={mdiZodiacAquarius} spin />
+      <Icon size={scales.size[2]} path={mdiAtomVariant} spin />
       <div {...text()}>Loading...</div>
     </div>
   );

@@ -1,9 +1,21 @@
 import React from 'react';
+import Header from './Header';
+import { useStyle } from 'styles';
 
-function App() {
+function Main() {
+  const css = useStyle({
+
+  });
+
   return (
-    <div>HI</div>
-  );
+    <div { ...css() }>
+      
+    </div>
+  )
 }
 
-export default App;
+export default function Home() {
+  return (
+    <Header />
+  );
+}
