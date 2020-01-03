@@ -5,8 +5,8 @@ import Loading from './PageLoading';
 import { useStyle, media, scales, fonts} from '../styles';
 import { row, column, padding } from '../styles/common';
 
-const Home = Loadable({
-    loader: () => import('./Home'),
+const Showcase = Loadable({
+    loader: () => import('./Tabs'),
     loading: Loading,
 });
 
@@ -18,7 +18,7 @@ export default () => {
     return (
         <div {...wrapper()}>
             <Header />
-            <Home />
+            <Showcase />
         </div>
     )
 }
