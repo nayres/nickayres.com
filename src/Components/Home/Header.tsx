@@ -1,26 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useStyle, media, fonts, scales } from '../../styles';
+// import { Link } from 'react-router-dom';
+import { useStyle, media, scales } from '../../styles';
 import { row, column, padding } from '../../styles/common';
 import { name, introBio } from '../Markup';
 
-function Title() {
-  const css = useStyle({
+export default function Header() {
+  const wrapper = useStyle({
+    ...padding(scales.spacing[4], scales.spacing[5]),
+    ...row('center', 'center'),
+    borderBottom: '1px solid black',
+    [media.mobilePortrait]: {
+      flexDirection: 'column'
+    }
+  });
+
+  const content = useStyle({
+    ...column('center', 'center'),
+    [media.mobilePortrait]: {
+      flexDirection: 'column'
+    }
+  });
+
+  const title = useStyle({
     fontSize: scales.font[3],
   });
 
-  return (
-    <div>
-      <h1 { ...css() }>
-        { name }
-      </h1>
-    </div>
-  );
-}
-
-function Intro() {
   const text = useStyle({
-    fontSize: scales.font[5],
+    fontSize: scales.font[4],
     width: '25%'
   });
 
@@ -30,45 +36,17 @@ function Intro() {
   });
 
   return (
-    <div { ...markup() }>
-      <p { ...text() }>
-        { introBio }
-      </p>
-    </div>
-  )
-}
-
-function Main() {
-  const css = useStyle({
-    ...column('center', 'center'),
-
-    [media.mobilePortrait]: {
-      flexDirection: 'column'
-    }
-  });
-
-  return (
-    <div { ...css() }>
-      <Title />
-      <Intro />
-    </div>
-  )
-}
-
-export default function Header() {
-  const css = useStyle({
-    ...padding(scales.spacing[4], scales.spacing[5]),
-    ...row('center', 'center'),
-    borderBottom: '1px solid black',
-
-    [media.mobilePortrait]: {
-      flexDirection: 'column'
-    }
-  });
-
-  return (
-    <div { ...css() }>
-      <Main />
+    <div {...wrapper()}>
+      <div {...content()}>
+        <h1 {...title()}>
+          {name}
+        </h1>
+        <div {...markup()}>
+          <p {...text()}>
+            {introBio}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

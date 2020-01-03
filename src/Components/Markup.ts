@@ -1,2 +1,7 @@
 export const name = `Nick Ayres`
-export const introBio = `The six years I’ve spent as a software engineer have been extremely formative. I have been able to tap into my own human limits, and push myself into expertise as a user interface engineer. I am an avid learner, driven by a need to envelop myself in what interests me, coupled with my self-starter nature. The majority of my expertise, and execution is a focus on web performance, and progressive web application development. Outside of work I am an open-source contributor, and I am currently in the process of shipping a first-to-market product that I have solely developed.`;
+export const introBio = `
+  I'm a UI engineer that a passion for building 
+  applications that make life easier. I love the
+  web, and I love people. If we haven't connected,
+  please feel free to say hi!
+`;
