@@ -1,4 +1,5 @@
-export const name = `Nick Ayres`
+export const name = `Nick Ayres`;
+export const twitter = `@nick_aayres`;
 export const introBio = `
   I'm a UI engineer that a passion for building 
   applications that make life easier. I love the

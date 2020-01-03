@@ -1,19 +1,24 @@
 import React from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import Loading from './Loading';
+import Header from './Header';
+import Loading from './PageLoading';
+import { useStyle, media, scales, fonts} from '../styles';
+import { row, column, padding } from '../styles/common';
 
 const Home = Loadable({
     loader: () => import('./Home'),
     loading: Loading,
 });
 
-export default () => (
-    <Switch>
-        <Route
-            exact
-            path='/'
-            render={() => <Home /> }
-        />
-    </Switch>
-)
+export default () => {
+    const wrapper = useStyle({
+        height: '100vh'
+    });
+
+    return (
+        <div {...wrapper()}>
+            <Header />
+            <Home />
+        </div>
+    )
+}

@@ -1,13 +1,13 @@
 import React from 'react';
-import { fonts, scales, useStyle } from '../styles';
+import { scales, useStyle, fonts } from '../styles';
 import Icon from '@mdi/react';
 import { mdiAtomVariant } from '@mdi/js';
 
-export default function Loading() {
+export default function PageLoading() {
   const css = useStyle({
     width: '100vw',
     height: '100vh',
-
+    fontFamily: fonts.verdana,
     display: 'grid',
     justifyContent: 'center',
     alignContent: 'center',
@@ -17,7 +17,6 @@ export default function Loading() {
   });
 
   const text = useStyle({
-    fontFamily: fonts.verdana,
     fontSize: scales.font[3],
   });
 
