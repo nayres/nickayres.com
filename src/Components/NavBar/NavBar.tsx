@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStyle, media, scales} from '../../styles';
 import { row, column, padding } from '../../styles/common';
 
