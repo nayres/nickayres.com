@@ -1,4 +1,5 @@
 import { CSSProperties } from 'aphrodite';
+import { css } from 'styled-components';
 
 type Val = string | number;
 
