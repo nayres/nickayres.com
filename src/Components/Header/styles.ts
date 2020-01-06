@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { scales, fonts } from '../../styles';
+import { scales } from '../../styles';
 
 export const HeaderWrapper = styled('header')`
   display: flex;
+  background: white;
+  border-bottom: .025rem solid #f5f5f5;
   justify-content: center;
   align-items: center;
   padding: ${scales.spacing[4]};
-  border-bottom: .5px solid lightgrey;
-  font-family: ${fonts.verdana};
+  color: black;
 
   .content {
     display: flex;
@@ -26,13 +27,12 @@ export const HeaderLinks = styled('div')`
 
   > a {
     color: black;
-    text-decoration: none;
     margin: 0 ${scales.spacing[3]};
-    font-size: ${scales.font[4]};
-    transition: 3s ease-in;
-  }
+    font-size: ${scales.font[6]};
+    transition: .3s ease-in;
 
-  > a:hover {
-    color: grey;
+    &:hover {
+      color: grey;
+    }
   }
 `;

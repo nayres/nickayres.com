@@ -62,9 +62,9 @@ export default function Tabs() {
             onClick={() => toggleSidebar(!sideBarOpen)}
           >
             { sideBarOpen ?
-              <Icon size={'1.5rem'} path={mdiArrowCollapseHorizontal} />
+              <Icon size={'1.5rem'} color='#616161' path={mdiArrowCollapseHorizontal} />
               :
-              <Icon size={'1.5rem'} path={mdiArrowExpandHorizontal} />
+              <Icon size={'1.5rem'} color='#616161' path={mdiArrowExpandHorizontal} />
             }
           </button>
         </div>
