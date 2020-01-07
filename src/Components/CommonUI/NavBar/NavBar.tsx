@@ -1,13 +1,16 @@
-import React, { useState, MouseEvent, KeyboardEvent } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiDotsHorizontal } from '@mdi/js';
 
-import { SideBar, Links } from '../../CommonUI';
-import { name } from '../../Markup';
+import { SideBar } from '../../CommonUI';
 import { HeaderWrapper } from './styles';
 
-export default function Header() {
+export interface NavBarTypes {
+  children: ReactNode
+}
+
+export default function NavBar({ children }: NavBarTypes) {
   const [sidebarVisible, toggleSidebar] = useState(true);
 
   function handleClick() {
@@ -23,27 +26,14 @@ export default function Header() {
         >
           <Icon size={'1.75rem'} color='#eeeeee' path={mdiDotsHorizontal} />
         </button>
-        <Link className='title' to='/'>{name}</Link>
+        <Link className='title' to='/'>Nick Ayres</Link>
       </div>
       { sidebarVisible &&
         <SideBar
           closeSidebar={handleClick}
           sidebarOpen={sidebarVisible}
         >
-          <>
-            <Links 
-              to='/'
-              label='About'
-             />
-            <Links 
-              to='/ui'
-              label='UI'
-             />
-            <Links 
-              to='/algorithms'
-              label='Algorithms / DS'
-             />
-          </>
+          {children}
         </SideBar>
       }
     </HeaderWrapper>

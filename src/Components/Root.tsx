@@ -2,9 +2,14 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { NavBar, Footer } from './CommonUI';
 import Home from './HomeView';
 import Docs from './DocsView/Docs';
+import {
+  NavBar,
+  Links,
+  Footer,
+  ExternalLink
+} from './CommonUI';
 
 const AppInner = styled('div')`
 
@@ -14,7 +19,22 @@ const Root = () => {
   return (
     <>
       <BrowserRouter>
-        <NavBar />
+        <NavBar>
+          <>
+            <Links 
+              to='/'
+              label='About'
+             />
+            <Links 
+              to='/ui'
+              label='UI'
+             />
+            <Links 
+              to='/algorithms'
+              label='Algorithms / DS'
+             />
+          </>
+        </NavBar>
           <AppInner>
             <Route
                 exact
@@ -26,7 +46,14 @@ const Root = () => {
                 render={() => <Docs /> }
             />
           </AppInner>
-        <Footer />
+        <Footer>
+          <ExternalLink href='https://twitter.com/nick_aayres'>
+            Twitter
+          </ExternalLink>
+          <ExternalLink href='https://github.com/nayres'>
+            Github
+          </ExternalLink>
+        </Footer>
       </BrowserRouter>
     </>
   );

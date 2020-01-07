@@ -1,12 +1,15 @@
-import React from 'react';
-import Links from './Links';
+import React, { ReactNode } from 'react';
 import { FooterWrapper } from './styles';
 
-export default function Header() {
+export interface FooterTypes {
+  children: ReactNode
+}
+
+export default function Footer({ children }: FooterTypes) {
   return (
     <FooterWrapper>
       <div className='content'>
-        <Links />
+        {children}
       </div>
     </FooterWrapper>
   );

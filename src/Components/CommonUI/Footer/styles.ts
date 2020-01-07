@@ -18,10 +18,8 @@ export const FooterWrapper = styled('footer')`
     align-items: center;
     width: 100%;
   }
-`;
 
-export const FooterLinks = styled('div')`
-  > a {
+  a {
     color: black;
     margin: 0 ${scales.spacing[3]};
     font-size: ${scales.font[5]};
