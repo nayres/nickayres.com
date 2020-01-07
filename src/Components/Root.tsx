@@ -1,17 +1,34 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { wrapProviders } from './utilities';
-import App from './App';
+import { BrowserRouter, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
-const Providers = wrapProviders([
-  BrowserRouter
-]);
+import { NavBar, Footer } from './CommonUI';
+import Home from './HomeView';
+import Docs from './DocsView/Docs';
+
+const AppInner = styled('div')`
+
+`;
 
 const Root = () => {
   return (
-    <Providers>
-      <App />
-    </Providers>
+    <>
+      <BrowserRouter>
+        <NavBar />
+          <AppInner>
+            <Route
+                exact
+                path='/'
+                render={() => <Home /> }
+            />
+            <Route
+                path='/documentation'
+                render={() => <Docs /> }
+            />
+          </AppInner>
+        <Footer />
+      </BrowserRouter>
+    </>
   );
 };
 
