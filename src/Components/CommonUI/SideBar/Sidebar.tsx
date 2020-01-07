@@ -19,13 +19,12 @@ export default function SideBar({ children, closeSidebar, sidebarOpen }: SideBar
             <div className='tab-menu'>
               {children}
             </div>
-            <div className='toggle-menu'>
-              <button
-                id="tab-button"
-                onClick={closeSidebar}
-              >
-                <Icon size={'1.5rem'} color='#616161' path={mdiArrowCollapseHorizontal} />
-              </button>
+            <div
+              className='toggle-menu'
+              onClick={closeSidebar}
+              tabIndex={0}
+            >
+              <Icon size={'1.5rem'} color='#616161' path={mdiArrowCollapseHorizontal} />
             </div>
             <Overlay
               onFocus={closeSidebar}

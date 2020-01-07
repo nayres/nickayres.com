@@ -39,13 +39,7 @@ export const Menu = styled('div')`
     background: #e0e0e0;
     padding: 1rem 0.75rem;
     height: inherit;
-
-    #tab-button {
-      border: none;
-      background: transparent;
-      padding: 0;
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 
   .tab-body {

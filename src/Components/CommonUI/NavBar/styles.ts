@@ -16,7 +16,8 @@ export const HeaderWrapper = styled('nav')`
     background: none;
     border: 0;
     padding: 0 ${scales.spacing[1]};
-
+    cursor: pointer;
+    
     &:hover {
       background: #0d47a1;
     }
