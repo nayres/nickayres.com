@@ -1,16 +1,16 @@
-import React, { useState, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import Icon from '@mdi/react';
 import { mdiArrowCollapseHorizontal } from '@mdi/js';
 import { Wrapper } from './styles';
 
 export interface SideBarTypes {
   children?: ReactNode,
+  closeSidebar: () => void,
+  sidebarOpen: boolean
 }
 
 /* TODO: Map Links from JSON routes */
-export default function SideBar({ children }: SideBarTypes) {
-  const [sidebarOpen, closeSidebar] = useState(true);
-
+export default function SideBar({ children, closeSidebar, sidebarOpen }: SideBarTypes) {
   return (
     <>
       { sidebarOpen &&
@@ -21,7 +21,7 @@ export default function SideBar({ children }: SideBarTypes) {
           <div className='toggle-menu'>
             <button
               id="tab-button"
-              onClick={() => closeSidebar(!sidebarOpen)}
+              onClick={closeSidebar}
             >
               <Icon size={'1.5rem'} color='#616161' path={mdiArrowCollapseHorizontal} />
             </button>

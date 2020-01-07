@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent, KeyboardEvent } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiDotsHorizontal } from '@mdi/js';
@@ -10,18 +10,26 @@ import { HeaderWrapper } from './styles';
 export default function Header() {
   const [sidebarVisible, toggleSidebar] = useState(true);
 
+  function handleClick() {
+    toggleSidebar(!sidebarVisible);
+    return null;
+  }
+
   return (
     <HeaderWrapper>
       <div className='content'>
         <button
-          onClick={() => toggleSidebar(!sidebarVisible)}
+          onClick={handleClick}
         >
           <Icon size={'1.75rem'} color='#eeeeee' path={mdiDotsHorizontal} />
         </button>
         <Link className='title' to='/'>{name}</Link>
       </div>
       { sidebarVisible &&
-        <SideBar>
+        <SideBar
+          closeSidebar={handleClick}
+          sidebarOpen={sidebarVisible}
+        >
           <>
             <Links 
               to='/'
