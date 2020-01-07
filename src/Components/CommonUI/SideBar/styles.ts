@@ -1,28 +1,37 @@
 import styled from 'styled-components';
 import { scales } from '../../../styles';
 
-export const Wrapper = styled('div')`font-display: auto;
+export const Overlay = styled('div')`font-display: auto;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+`;
+
+export const Menu = styled('div')`
   display: flex;
   flex-direction: row;
   width: 100vw;
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
   left: 0;
   top: 0;
-
+  z-index: 50;
+  
   .tab-menu {
     height: 100vh;
     width: 12rem;
     transition: .3s ease-in-out;
     display: flex;
-    background: white;
     flex-direction: column;
+    background: white;
     align-items: center;
     position: sticky;
     top: 0;
     left: 0;
   }
-
   .toggle-menu {
     display: flex;
     flex-direction: row;
