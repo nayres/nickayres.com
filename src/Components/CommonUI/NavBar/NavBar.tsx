@@ -11,7 +11,7 @@ export interface NavBarTypes {
 }
 
 export default function NavBar({ children }: NavBarTypes) {
-  const [sidebarVisible, toggleSidebar] = useState(true);
+  const [sidebarVisible, toggleSidebar] = useState(false);
 
   function handleClick() {
     toggleSidebar(!sidebarVisible);
