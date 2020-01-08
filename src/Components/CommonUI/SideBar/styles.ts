@@ -22,7 +22,7 @@ export const Menu = styled('div')`
   
   .tab-menu {
     height: 100vh;
-    width: 12rem;
+    width: 16rem;
     transition: .3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -62,7 +62,20 @@ export const Menu = styled('div')`
     > span {
       color: black;
       font-size: ${scales.font[5]};
-      margin-left: ${scales.spacing[4]};
+      margin-left: ${scales.spacing[5]};
+    }
+  }
+
+  .home-button {
+    padding: 1.75rem 0;
+    width: inherit;
+    text-align: center;
+    border-bottom: .025rem solid #f5f5f5;
+    transition: .3s ease-in-out;
+    color: black;
+
+    &:hover {
+      color: black;
     }
   }
 `;

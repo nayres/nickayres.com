@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Header } from './styles';
 
 export default () => {
   return (
-      <>
-        <Link to='/documentation'>Docs</Link>
-      </>
-  )
+      <Header>
+        Hi
+      </Header>
+  );
 }

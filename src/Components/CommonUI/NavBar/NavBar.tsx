@@ -7,14 +7,21 @@ import { SideBar } from '../../CommonUI';
 import { HeaderWrapper } from './styles';
 
 export interface NavBarTypes {
-  children: ReactNode
+  children?: ReactNode,
+  homeButton?: ReactNode
 }
 
-export default function NavBar({ children }: NavBarTypes) {
+export default function NavBar({ children, homeButton }: NavBarTypes) {
   const [sidebarVisible, toggleSidebar] = useState(false);
+  const [categoryOpen, toggleCategory] = useState(false);
 
-  function handleClick() {
+  function handleSidebarClick() {
     toggleSidebar(!sidebarVisible);
+    return null;
+  }
+
+  function handleAccordianClick() {
+    toggleCategory(!categoryOpen);
     return null;
   }
 
@@ -22,7 +29,7 @@ export default function NavBar({ children }: NavBarTypes) {
     <HeaderWrapper>
       <div className='content'>
         <button
-          onClick={handleClick}
+          onClick={handleSidebarClick}
         >
           <Icon size={'1.75rem'} color='#eeeeee' path={mdiDotsHorizontal} />
         </button>
@@ -30,8 +37,11 @@ export default function NavBar({ children }: NavBarTypes) {
       </div>
       { sidebarVisible &&
         <SideBar
-          closeSidebar={handleClick}
+          closeSidebar={handleSidebarClick}
           sidebarOpen={sidebarVisible}
+          visible={categoryOpen}
+          toggle={handleAccordianClick}
+          homeButton={homeButton}
         >
           {children}
         </SideBar>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import Loading from '../PageLoading';
+import Loading from '../CommonUI/PageLoading';
 import { DocsWrapper } from './styles';
 
 const About = Loadable({
@@ -20,19 +20,21 @@ const Algorithms = Loadable({
 function TabBody() {
   return (
     <div>
-        <Route
-            exact
-            path='/documentation/'
-            render={() => <About /> }
-        />
-        <Route
-            path='/documentation/ui'
-            render={() => <UI /> }
-        />
-        <Route
-            path='/documentation/algorithms'
-            render={() => <Algorithms /> }
-        />
+        <Switch>
+            <Route
+                exact
+                path='/docs/'
+                component={About}
+            />
+            <Route
+                path='/docs/ui'
+                component={UI}
+            />
+            <Route
+                path='/docs/algorithms'
+                component={Algorithms}
+            />
+        </Switch>
     </div>
   );
 }
