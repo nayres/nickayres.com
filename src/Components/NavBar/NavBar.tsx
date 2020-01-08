@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiDotsHorizontal } from '@mdi/js';
 
-import { SideBar } from '../../CommonUI';
+import { SideBar } from '../SideBar';
 import { HeaderWrapper } from './styles';
 
 export interface NavBarTypes {
@@ -41,10 +41,7 @@ export default function NavBar({ children, homeButton }: NavBarTypes) {
           sidebarOpen={sidebarVisible}
           visible={categoryOpen}
           toggle={handleAccordianClick}
-          homeButton={homeButton}
-        >
-          {children}
-        </SideBar>
+        />
       }
     </HeaderWrapper>
   );

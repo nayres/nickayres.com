@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { scales } from '../../../styles';
+import { scales } from '../../styles';
 
 export const HeaderWrapper = styled('nav')`
   display: flex;

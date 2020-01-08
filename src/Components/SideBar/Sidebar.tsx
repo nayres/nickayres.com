@@ -1,12 +1,13 @@
 import React, { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiArrowCollapseHorizontal } from '@mdi/js';
 
-import { Accordian } from '../index';
+import { Accordian } from '../CommonUI';
+import { Links } from '../SideBar';
 import { Menu, Overlay } from './styles';
 
 export interface SideBarTypes {
-  children?: ReactNode,
   homeButton?: ReactNode,
   closeSidebar: () => void,
   sidebarOpen: boolean,
@@ -16,7 +17,6 @@ export interface SideBarTypes {
 
 /* TODO: Map Links from JSON routes */
 export default function SideBar({
-  children,
   homeButton,
   closeSidebar,
   sidebarOpen,
@@ -30,13 +30,35 @@ export default function SideBar({
         <>
           <Menu>
             <div className='tab-menu'>
-              { homeButton }
+              <Link
+                onClick={closeSidebar}
+                className='home-button'
+                to='/'
+              >
+                Home
+              </Link>
               <Accordian
                 visibility={visible}
                 toggle={toggle}
                 label='Docs'
               >
-                { children }
+                <>
+                  <Links 
+                    onClick={closeSidebar}
+                    to='/docs'
+                    label='About'
+                  />
+                  <Links
+                    onClick={closeSidebar}
+                    to='/docs/ui'
+                    label='UI'
+                  />
+                  <Links
+                    onClick={closeSidebar}
+                    to='/docs/algorithms'
+                    label='Algorithms / DS'
+                  />
+                </>
               </Accordian>
             </div>
             <div

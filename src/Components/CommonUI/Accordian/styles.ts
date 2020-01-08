@@ -26,7 +26,8 @@ export const AccordianButton = styled('div')`
   border-bottom: .025rem solid #f5f5f5;
   transition: .3s ease-in-out;
   position: relative;
-
+  cursor: pointer;
+  
   &:hover, &:visited, &:focus {
     background: #f5f5f5;
     color: black;

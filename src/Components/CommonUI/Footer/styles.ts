@@ -5,7 +5,7 @@ export const FooterWrapper = styled('footer')`
   display: flex;
   background: #fafafa;
   border-top: .25px solid #eeeeee;
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding: ${scales.spacing[5]} 0;
   color: black;

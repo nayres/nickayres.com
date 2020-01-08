@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { scales } from '../../../styles';
+import { scales } from '../../styles';
 
 export const Overlay = styled('div')`font-display: auto;
   display: flex;
@@ -54,6 +54,8 @@ export const Menu = styled('div')`
     width: inherit;
     border-bottom: .025rem solid #f5f5f5;
     transition: .3s ease-in-out;
+    cursor: pointer;
+    
     &:hover {
       background: #f5f5f5;
       color: black;
@@ -73,6 +75,7 @@ export const Menu = styled('div')`
     border-bottom: .025rem solid #f5f5f5;
     transition: .3s ease-in-out;
     color: black;
+    cursor: pointer;
 
     &:hover {
       color: black;

@@ -14,10 +14,12 @@ export default function Accordian({
   label,
   toggle
 }: AccordianTypes) {
+
   return (
     <>
       <AccordianButton
         onClick={toggle}
+        tabIndex={0}
       >
         <span>{label}</span>
       </AccordianButton>

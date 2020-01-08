@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { fonts, scales } from '../../styles';
 
 export const DocsWrapper = styled('div')`
-    height: 100%;
+    height: 100vh;
     position: relative;
     font-family: ${fonts.verdana};
     display: flex;

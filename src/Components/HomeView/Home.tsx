@@ -1,11 +1,14 @@
 import React from 'react';
 import Header from './Header';
-import { Wrapper } from './styles';
+import AboutSection from './AboutSection';
+import BodyLinks from './BodyLinks';
 
 export default () => {
     return (
-        <Wrapper>
+        <>
             <Header />
-        </Wrapper>
+            <AboutSection />
+            <BodyLinks />
+        </>
     )
 }
