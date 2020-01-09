@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+
 import NavBar from './NavBar';
 import {
   Footer,
@@ -26,13 +27,13 @@ const Root = () => {
       <Router>
         <NavBar />
           <Route
-              exact
-              path='/'
-              component={Home}
+            exact
+            path='/'
+            render={() => <Home />}
           />
           <Route
-              path='/docs'
-              component={Docs}
+            path='/docs'
+            render={() => <Docs />}
           />
         <Footer>
           <ExternalLink href='https://twitter.com/nick_aayres'>

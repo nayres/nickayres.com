@@ -29,6 +29,7 @@ export default function NavBar({ children, homeButton }: NavBarTypes) {
     <HeaderWrapper>
       <div className='content'>
         <button
+          type='button'
           className='nav-button'
           onClick={handleSidebarClick}
         >

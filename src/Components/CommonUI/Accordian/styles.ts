@@ -29,16 +29,16 @@ export const AccordianButton = styled('button')`
   border-right: 0;
   border-left: 0;
   transition: .3s ease-in-out;
-  position: relative;
   cursor: pointer;
   
-  &:hover {
-    background: #f5f5f5;
+  &:hover, &:visited {
+    background: #eceff1;
     color: black;
   }
-  
-  &:visited {
-    background: #f5f5f5;
+
+  &:focus{
+    outline: 0;
+    background: #eceff1;
     color: black;
   }
 

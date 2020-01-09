@@ -28,14 +28,16 @@ export default function SideBar({
       { sidebarOpen &&
         <>
           <Menu>
-            <div className='tab-menu'>
-              <Link
-                onClick={closeSidebar}
-                className='home-button'
-                to='/'
-              >
-                Home
-              </Link>
+            <div className='tab-menu' tabIndex={-1}>
+              <div className='home-button' tabIndex={-1}>
+                <Link
+                 to='/'
+                 tabIndex={0}
+                 onClick={closeSidebar}
+                >
+                  Home
+                </Link>
+              </div>
               <Accordian
                 visibility={visible}
                 toggle={toggle}

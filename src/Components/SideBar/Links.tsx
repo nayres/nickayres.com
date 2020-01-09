@@ -10,10 +10,14 @@ export interface LinksTypes {
   onClick: () => void
 }
 
-export default function TabLinks({ to, onClick, label }: LinksTypes) {
+export default function TabLinks({ to, onClick, label, ...props }: LinksTypes) {
   return (
     <>
-      <Link className='tab' onClick={onClick} to={to}>
+      <Link
+        className='tab'
+        onClick={onClick}
+        to={to}
+      >
         <span>
           { label }
         </span>

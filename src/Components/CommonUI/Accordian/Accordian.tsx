@@ -19,6 +19,7 @@ export default function Accordian({
   return (
     <>
       <AccordianButton
+        type='button'
         onClick={toggle}
         tabIndex={0}
       >

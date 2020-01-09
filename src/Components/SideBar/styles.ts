@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { scales } from '../../styles';
 
-export const Overlay = styled('div')`font-display: auto;
+export const Overlay = styled('div')`
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: 100%;
   position: relative;
   background: rgba(0, 0, 0, 0.5);
   left: 0;
@@ -28,18 +28,30 @@ export const Menu = styled('div')`
     flex-direction: column;
     background: white;
     align-items: center;
-    position: sticky;
     top: 0;
     left: 0;
   }
+  
   .toggle-menu {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    background: #e0e0e0;
+    background: #eeeeee;
     padding: 1rem 0.75rem;
     height: inherit;
     cursor: pointer;
+    transition: .3s ease-in-out;
+
+
+    &:hover {
+      background: #e0e0e0;
+    }
+
+    &:focus {
+      outline: 0;
+      background: #e0e0e0;
+      color: black;
+    }
   }
 
   .tab-body {
@@ -50,14 +62,21 @@ export const Menu = styled('div')`
 
   .tab {
     text-decoration: none;
-    padding: 1.75rem 0;
+    padding: 1.5rem 0;
     width: inherit;
     border-bottom: .025rem solid #e0e0e0;
     transition: .3s ease-in-out;
     cursor: pointer;
     
     &:hover {
-      background: #f5f5f5;
+      background: #eceff1;
+      border-bottom: .025rem solid #eceff1;
+      color: black;
+    }
+
+    &:focus{
+      outline: 0;
+      background: #eceff1;
       color: black;
     }
 
@@ -73,12 +92,14 @@ export const Menu = styled('div')`
     width: inherit;
     text-align: center;
     border-bottom: .025rem solid #f5f5f5;
-    transition: .3s ease-in-out;
-    color: black;
-    cursor: pointer;
 
-    &:hover {
+    > a {
+      transition: .3s ease-in-out;
       color: black;
+
+      &:hover {
+        color: black;
+      }
     }
   }
 `;

@@ -7,7 +7,6 @@ export const Header = styled('header')`
   padding: ${scales.spacing[4]};
   background: #fafafa;
   border-bottom: .25px solid #fafafa;
-  width: 100%;
   height: 22rem;
 `;
 
@@ -16,7 +15,5 @@ export const Section = styled('div')`
   align-items: center;
   padding: ${scales.spacing[4]};
   background: #fafafa;
-  border-bottom: .25px solid #fafafa;
-  width: 100%;
   height: 30rem;
 `;
