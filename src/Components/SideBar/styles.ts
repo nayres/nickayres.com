@@ -11,7 +11,7 @@ export const Overlay = styled('div')`
   top: 0;
 `;
 
-export const Menu = styled('div')`
+export const Menu = styled('nav')`
   display: flex;
   flex-direction: row;
   width: 100vw;

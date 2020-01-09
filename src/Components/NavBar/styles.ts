@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { scales } from '../../styles';
 
-export const HeaderWrapper = styled('nav')`
+export const HeaderWrapper = styled('header')`
   display: flex;
   position: sticky;
   top: 0;

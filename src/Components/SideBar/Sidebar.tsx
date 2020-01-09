@@ -26,56 +26,54 @@ export default function SideBar({
   return (
     <>
       { sidebarOpen &&
-        <>
-          <Menu>
-            <div className='tab-menu' tabIndex={-1}>
-              <div className='home-button' tabIndex={-1}>
-                <Link
-                 to='/'
-                 tabIndex={0}
-                 onClick={closeSidebar}
-                >
-                  Home
-                </Link>
-              </div>
-              <Accordian
-                visibility={visible}
-                toggle={toggle}
-                label='Docs'
+        <Menu>
+          <div className='tab-menu' tabIndex={-1}>
+            <div className='home-button' tabIndex={-1}>
+              <Link
+                to='/'
+                tabIndex={0}
+                onClick={closeSidebar}
               >
-                <>
-                  <Links 
-                    onClick={closeSidebar}
-                    to='/docs'
-                    label='About'
-                  />
-                  <Links
-                    onClick={closeSidebar}
-                    to='/docs/ui'
-                    label='UI'
-                  />
-                  <Links
-                    onClick={closeSidebar}
-                    to='/docs/algorithms'
-                    label='Algorithms / DS'
-                  />
-                </>
-              </Accordian>
+                Home
+              </Link>
             </div>
-            <div
-              className='toggle-menu'
-              onClick={closeSidebar}
-              tabIndex={0}
+            <Accordian
+              visibility={visible}
+              toggle={toggle}
+              label='Docs'
             >
-              <Icon size={'1.5rem'} color='#616161' path={mdiArrowCollapseHorizontal} />
-            </div>
-            <Overlay
-              onFocus={closeSidebar}
-              onBlur={closeSidebar}
-              tabIndex={0}
-            />
-          </Menu>
-        </>
+              <>
+                <Links 
+                  onClick={closeSidebar}
+                  to='/docs'
+                  label='About'
+                />
+                <Links
+                  onClick={closeSidebar}
+                  to='/docs/ui'
+                  label='UI'
+                />
+                <Links
+                  onClick={closeSidebar}
+                  to='/docs/algorithms'
+                  label='Algorithms / DS'
+                />
+              </>
+            </Accordian>
+          </div>
+          <div
+            className='toggle-menu'
+            onClick={closeSidebar}
+            tabIndex={0}
+          >
+            <Icon size={'1.5rem'} color='#616161' path={mdiArrowCollapseHorizontal} />
+          </div>
+          <Overlay
+            onFocus={closeSidebar}
+            onBlur={closeSidebar}
+            tabIndex={0}
+          />
+        </Menu>
       }
     </>
   );

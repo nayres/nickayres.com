@@ -22,6 +22,7 @@ export default function Accordian({
         type='button'
         onClick={toggle}
         tabIndex={0}
+        aria-label={label}
       >
         <span>{label}</span>
       </AccordianButton>

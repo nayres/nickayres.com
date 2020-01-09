@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { fonts, scales } from '../../styles';
 
-export const DocsWrapper = styled('div')`
+export const DocsWrapper = styled('main')`
     height: 100vh;
     position: relative;
     font-family: ${fonts.verdana};

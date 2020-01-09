@@ -32,6 +32,7 @@ export default function NavBar({ children, homeButton }: NavBarTypes) {
           type='button'
           className='nav-button'
           onClick={handleSidebarClick}
+          aria-label="sidebar close button"
         >
           <Icon size={'1.75rem'} color='#eeeeee' path={mdiDotsHorizontal} />
         </button>

@@ -19,23 +19,23 @@ const Algorithms = Loadable({
 
 function TabBody() {
   return (
-    <div>
+    <>
         <Switch>
             <Route
                 exact
                 path='/docs/'
-                component={About}
+                render={() => <About />}
             />
             <Route
                 path='/docs/ui'
-                component={UI}
+                render={() => <UI />}
             />
             <Route
                 path='/docs/algorithms'
-                component={Algorithms}
+                render={() => <Algorithms />}
             />
         </Switch>
-    </div>
+    </>
   );
 }
 

@@ -5,10 +5,10 @@ import BodyLinks from './BodyLinks';
 
 export default () => {
     return (
-        <>
+        <main>
             <Header />
             <AboutSection />
             <BodyLinks />
-        </>
+        </main>
     )
 }

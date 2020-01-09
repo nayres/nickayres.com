@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { scales } from '../../styles';
 
-export const Header = styled('header')`
+export const Header = styled('div')`
   display: flex;
   align-items: center;
   padding: ${scales.spacing[4]};
