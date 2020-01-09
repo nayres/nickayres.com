@@ -17,7 +17,6 @@ export interface SideBarTypes {
 
 /* TODO: Map Links from JSON routes */
 export default function SideBar({
-  homeButton,
   closeSidebar,
   sidebarOpen,
   visible,

@@ -8,6 +8,7 @@ export interface AccordianTypes {
   toggle: () => void
 }
 
+// TODO: {...props} instead of styles, determine styles in parent
 export default function Accordian({
   visibility,
   children,

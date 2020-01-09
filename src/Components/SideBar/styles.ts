@@ -52,7 +52,7 @@ export const Menu = styled('div')`
     text-decoration: none;
     padding: 1.75rem 0;
     width: inherit;
-    border-bottom: .025rem solid #f5f5f5;
+    border-bottom: .025rem solid #e0e0e0;
     transition: .3s ease-in-out;
     cursor: pointer;
     

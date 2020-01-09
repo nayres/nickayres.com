@@ -18,17 +18,26 @@ export const AccordianWrapper = styled('div')<AccordianProps>`
   position: relative;
 `;
 
-export const AccordianButton = styled('div')`
+export const AccordianButton = styled('button')`
   display: flex;
+  justify-content: space-between;
   text-decoration: none;
   width: 100%;
   padding: 1.75rem 0;
-  border-bottom: .025rem solid #f5f5f5;
+  border-bottom: .025rem solid #e0e0e0;
+  border-top: .025rem solid #e0e0e0;
+  border-right: 0;
+  border-left: 0;
   transition: .3s ease-in-out;
   position: relative;
   cursor: pointer;
   
-  &:hover, &:visited, &:focus {
+  &:hover {
+    background: #f5f5f5;
+    color: black;
+  }
+  
+  &:visited {
     background: #f5f5f5;
     color: black;
   }
@@ -36,6 +45,6 @@ export const AccordianButton = styled('div')`
   > span {
     color: black;
     font-size: ${scales.font[5]};
-    margin-left: ${scales.spacing[4]};
+    margin: 0 ${scales.spacing[4]};
   }
 `;

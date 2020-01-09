@@ -10,7 +10,7 @@ export const HeaderWrapper = styled('nav')`
   padding: ${scales.spacing[3]} ${scales.spacing[4]};
   color: black;
 
-  button {
+  .nav-button {
     flex: 0 0 auto;
     text-align: center;
     background: none;

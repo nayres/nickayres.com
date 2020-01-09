@@ -29,6 +29,7 @@ export default function NavBar({ children, homeButton }: NavBarTypes) {
     <HeaderWrapper>
       <div className='content'>
         <button
+          className='nav-button'
           onClick={handleSidebarClick}
         >
           <Icon size={'1.75rem'} color='#eeeeee' path={mdiDotsHorizontal} />
