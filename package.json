@@ -110,7 +110,6 @@
   "bugs": {
     "url": "https://github.com/nayres/nickayres.com/issues"
   },
-  "homepage": "https://github.com/nayres/nickayres.com#readme",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
