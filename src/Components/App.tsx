@@ -20,7 +20,7 @@ const Docs = Loadable({
 
 const App = () => {
   return (
-    <div>
+    <>
         <NavBar />
           <Route
             exact
@@ -39,7 +39,7 @@ const App = () => {
             Github
           </ExternalLink>
         </Footer>
-    </div>
+    </>
   );
 };
 
