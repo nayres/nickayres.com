@@ -5,11 +5,6 @@ interface AccordianProps {
   readonly visible: boolean
 }
 
-export const Wrapper = styled('div')`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const AccordianWrapper = styled('div')<AccordianProps>`
   display: flex;
   width: inherit;
