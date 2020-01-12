@@ -44,17 +44,17 @@ export default function SideBar({
               <>
                 <Links 
                   onClick={closeSidebar}
-                  to='/docs'
+                  to='/'
                   label='About'
                 />
                 <Links
                   onClick={closeSidebar}
-                  to='/docs/ui'
+                  to='/ui'
                   label='UI'
                 />
                 <Links
                   onClick={closeSidebar}
-                  to='/docs/algorithms'
+                  to='/algorithms'
                   label='Algorithms / DS'
                 />
               </>
