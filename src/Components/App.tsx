@@ -22,8 +22,9 @@ const Algorithms = Loadable({
 
 const App = () => {
   return (
-    <DocsView>
-        <NavBar />
+    <>
+      <NavBar />
+        <DocsView>
           <Switch>
             <Route
                 exact
@@ -39,8 +40,9 @@ const App = () => {
                 render={() => <Algorithms />}
             />
           </Switch>
-        <Footer />
-    </DocsView>
+        </DocsView>
+      <Footer />
+    </>
   );
 };
 
