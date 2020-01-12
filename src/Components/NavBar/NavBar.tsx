@@ -1,5 +1,4 @@
 import React, { useState, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
 import { mdiDotsHorizontal } from '@mdi/js';
 
@@ -36,7 +35,7 @@ export default function NavBar({ children, homeButton }: NavBarTypes) {
         >
           <Icon size={'1.75rem'} color='#eeeeee' path={mdiDotsHorizontal} />
         </button>
-        <Link className='title' to='/'>Nick Ayres</Link>
+        <a className='title' href='https://nahomepage.netlify.com/'>Nick Ayres</a>
       </div>
       { sidebarVisible &&
         <SideBar

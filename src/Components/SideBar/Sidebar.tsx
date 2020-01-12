@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
-import { mdiArrowCollapseHorizontal } from '@mdi/js';
+import { mdiClose } from '@mdi/js';
 
 import { Accordian } from '../CommonUI';
 import { Links } from '../SideBar';
@@ -29,13 +29,13 @@ export default function SideBar({
         <Menu>
           <div className='tab-menu' tabIndex={-1}>
             <div className='home-button' tabIndex={-1}>
-              <Link
-                to='/'
+              <a
+                href='https://nahomepage.netlify.com/'
                 tabIndex={0}
                 onClick={closeSidebar}
               >
                 Home
-              </Link>
+              </a>
             </div>
             <Accordian
               visibility={visible}
@@ -66,7 +66,7 @@ export default function SideBar({
             onClick={closeSidebar}
             tabIndex={0}
           >
-            <Icon size={'1.5rem'} color='#616161' path={mdiArrowCollapseHorizontal} />
+            <Icon size={'1.5rem'} path={mdiClose} />
           </div>
           <Overlay
             onFocus={closeSidebar}
