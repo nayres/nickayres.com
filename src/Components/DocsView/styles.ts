@@ -1,22 +1,12 @@
 import styled from 'styled-components';
-import { fonts, scales } from '../../styles';
+import { fonts } from '../../styles';
 
 export const DocsWrapper = styled('main')`
-    height: 100vh;
-    position: relative;
     font-family: ${fonts.verdana};
     display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
     width: 100%;
-    overflow-x: auto;
-
-    .showcase {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-
-      > div {
-        padding: ${scales.spacing[4]}
-      }
-    }
+    height: 100%;
+    min-height: 0;
 `;

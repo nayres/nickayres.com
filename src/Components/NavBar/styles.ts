@@ -3,12 +3,10 @@ import { scales } from '../../styles';
 
 export const HeaderWrapper = styled('header')`
   display: flex;
-  position: sticky;
-  top: 0;
   z-index: 1000;
   background: #1565c0;
-  padding: ${scales.spacing[3]} ${scales.spacing[4]};
   color: black;
+  width: 100%;
 
   .nav-button {
     flex: 0 0 auto;
@@ -29,10 +27,12 @@ export const HeaderWrapper = styled('header')`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 44px;
+    padding: 0 ${scales.spacing[4]};
   }
 
   .title {
-    font-size: ${scales.font[3]};
+    font-size: ${scales.font[4]};
     text-decoration: none;
     color: #eeeeee;
   }

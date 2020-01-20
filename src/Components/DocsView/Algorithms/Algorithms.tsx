@@ -1,11 +1,16 @@
 import React from 'react';
-import { ValidParens } from '../CodeSamples';
+import CodeEditor from './CodeEditor';
 import { Wrapper } from './styles';
 
-export default function() {
+export default function Algorithms() {
   return (
     <Wrapper>
-      <ValidParens />
+      <div className="section">
+
+      </div>
+      <div className="section">
+        <CodeEditor />
+      </div>
     </Wrapper>
   );
-}
+};
