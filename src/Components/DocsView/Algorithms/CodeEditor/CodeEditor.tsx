@@ -28,7 +28,7 @@ function Code(props: CodeMirrorTypes) {
     onChange(value);
   }, [onChange]);
 
-  const run = () => {
+  const runCode = () => {
     const s = document.createElement('script');
     s.textContent = value;
     document.body.appendChild(s);
@@ -38,18 +38,25 @@ function Code(props: CodeMirrorTypes) {
   };
 
   return (
-    <EditorWrapper>
-      <div className="editorWrapper">
-        <CodeMirror
-          value={value}
-          options={props.options}
-          onBeforeChange={(editor: any, data: any, value: string) => {
-            setValue(value);
-            props.onChange(value);
-          }}
-        />
+    <>
+      <EditorWrapper>
+        <div className="editorWrapper">
+          <CodeMirror
+            value={value}
+            options={props.options}
+            onBeforeChange={(editor: any, data: any, value: string) => {
+              setValue(value);
+              props.onChange(value);
+            }}
+          />
+        </div>
+      </EditorWrapper>
+      <div className="editor-controls">
+        <div id="code-result">
+          <button onClick={runCode}>run</button>
+        </div>
       </div>
-    </EditorWrapper>
+    </>
   );
 }
 
@@ -71,11 +78,6 @@ export default function Editor(props: EditorTypes) {
           theme: 'material-darker'
         }}
       />
-      <div className="editor-controls">
-        <div id="code-result">
-          <button>run</button>
-        </div>
-      </div>
     </Content>
   );
 }
