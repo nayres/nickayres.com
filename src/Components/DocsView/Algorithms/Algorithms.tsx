@@ -11,6 +11,7 @@ export default function Algorithms() {
         language: 'javaScript',
         title: 'Hello World',
         description: 'Simply type "Hello world" in between the parenthesis, and run the code!',
+        example: 'console.log("Hello World");',
         code: 'console.log();',
       }
     ]
@@ -24,6 +25,7 @@ export default function Algorithms() {
           <ProblemInfo
             title={data.problems[0].title}
             description={data.problems[0].description}
+            example={data.problems[0].example}
           />
         </div>
         <div className="divider" />

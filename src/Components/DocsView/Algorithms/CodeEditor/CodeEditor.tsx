@@ -39,16 +39,6 @@ function Code({ onChange, data, options }: CodeMirrorTypes) {
 
   return (
     <>
-      <div className="editor-controls">
-        <div id="code-result">
-          <button
-            id="run-button"
-            onClick={runCode}
-          >
-            run
-          </button>
-        </div>
-      </div>
       <EditorWrapper>
         <div className="editorWrapper">
           <CodeMirror
@@ -61,6 +51,16 @@ function Code({ onChange, data, options }: CodeMirrorTypes) {
           />
         </div>
       </EditorWrapper>
+      <div className="editor-controls">
+        <div id="code-result">
+          <button
+            id="run-button"
+            onClick={runCode}
+          >
+            Submit
+          </button>
+        </div>
+      </div>
     </>
   );
 }

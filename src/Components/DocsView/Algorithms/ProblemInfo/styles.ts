@@ -22,7 +22,6 @@ export const InfoWrapper = styled('div')`
 
   .info-description {
     width: 100%;
-    height: 900px;
     overflow-y: auto;
 
     > p {

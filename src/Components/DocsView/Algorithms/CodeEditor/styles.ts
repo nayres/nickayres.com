@@ -32,6 +32,7 @@ export const Content = styled('div')`
 
   .editor-controls {
     display: flex;
+    justify-content: flex-end;
     z-index: 100;
     padding: .75rem;
   }
@@ -39,13 +40,14 @@ export const Content = styled('div')`
   #code-result {
     #run-button {
       border: 0;
-      padding: .25rem 1.5rem;
+      padding: .5rem 2rem;
       font-size: 1rem;
-      background: lightgrey;
+      color: #eeeeee;
+      background: #1565c0;
       cursor: pointer;
 
       &:hover {
-        background: grey;
+        background: #0d47a1;
       }
     }
   }
