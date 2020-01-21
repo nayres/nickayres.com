@@ -25,7 +25,6 @@ const Layout = styled('div')`
   display: flex;
   height: 100%;
   width: 100%;
-  min-width: 896px;
   flex-direction: column;
   overflow-x: hidden;
 `;

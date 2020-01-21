@@ -59,3 +59,12 @@ table {
 	height: 100%;
 	width: 100%;
 }
+::-webkit-scrollbar-thumb {
+	background: rgba(158, 158, 158, 0.5);
+	outline: none;
+	border: 3px solid transparent;
+	background-clip: padding-box;
+}
+::-webkit-scrollbar {
+	width: 10px;
+}

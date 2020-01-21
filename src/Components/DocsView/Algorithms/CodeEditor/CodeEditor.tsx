@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2'
 import * as codemirror from 'codemirror';
-import { EditorWrapper, Content } from '../styles';
+import { EditorWrapper, Content } from './styles';
 
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material-darker.css';
@@ -13,15 +13,15 @@ import 'codemirror/addon/display/placeholder';
 interface CodeMirrorTypes {
   options: codemirror.EditorConfiguration;
   onChange: (text: string) => void;
+  data: any
 }
 interface EditorTypes {
   onChange?: (text: string) => void;
+  data?: any;
 }
 
-function Code(props: CodeMirrorTypes) {
-  const code = `// code`;
-  const [value, setValue] = useState(code);
-  const { onChange } = props;
+function Code({ onChange, data, options }: CodeMirrorTypes) {
+  const [value, setValue] = useState(data.code);
 
   useEffect(() => {
     setValue(value);
@@ -34,28 +34,33 @@ function Code(props: CodeMirrorTypes) {
     document.body.appendChild(s);
     setTimeout(() => {
       document.body.removeChild(s);
-    }, 0);
+    }, 2000);
   };
 
   return (
     <>
+      <div className="editor-controls">
+        <div id="code-result">
+          <button
+            id="run-button"
+            onClick={runCode}
+          >
+            run
+          </button>
+        </div>
+      </div>
       <EditorWrapper>
         <div className="editorWrapper">
           <CodeMirror
             value={value}
-            options={props.options}
+            options={options}
             onBeforeChange={(editor: any, data: any, value: string) => {
               setValue(value);
-              props.onChange(value);
+              onChange(value);
             }}
           />
         </div>
       </EditorWrapper>
-      <div className="editor-controls">
-        <div id="code-result">
-          <button onClick={runCode}>run</button>
-        </div>
-      </div>
     </>
   );
 }
@@ -64,10 +69,11 @@ Code.defaultProps = {
   onChange: () => {}
 };
 
-export default function Editor(props: EditorTypes) {
+export default function Editor({ data }: EditorTypes) {
   return (
     <Content>
       <Code
+        data={data}
         options={{
           lineNumbers: true,
           indentUnit: 2,
