@@ -1,44 +1,47 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-import { Route } from 'react-router-dom';
+import Loading from './CommonUI/PageLoading';
+import { Route, Switch } from 'react-router-dom';
 
 import NavBar from './NavBar';
-import {
-  Footer,
-  ExternalLink,
-  PageLoading
-} from './CommonUI';
+import Footer from './Footer';
+import DocsView from './DocsView';
 
-const Home = Loadable({
-  loader: () => import('./HomeView'),
-  loading: PageLoading,
+const About = Loadable({
+  loader: () => import('./DocsView/About'),
+  loading: Loading,
 });
-const Docs = Loadable({
-  loader: () => import('./DocsView/Docs'),
-  loading: PageLoading,
+const UI = Loadable({
+  loader: () => import('./DocsView/UI'),
+  loading: Loading,
+});
+const Algorithms = Loadable({
+  loader: () => import('./DocsView/Algorithms'),
+  loading: Loading,
 });
 
 const App = () => {
   return (
     <>
-        <NavBar />
-          <Route
-            exact
-            path='/'
-            render={() => <Home />}
-          />
-          <Route
-            path='/docs'
-            render={() => <Docs />}
-          />
-        <Footer>
-          <ExternalLink href='https://twitter.com/nick_aayres'>
-            Twitter
-          </ExternalLink>
-          <ExternalLink href='https://github.com/nayres'>
-            Github
-          </ExternalLink>
-        </Footer>
+      <NavBar />
+        <DocsView>
+          <Switch>
+            <Route
+                exact
+                path='/'
+                render={() => <About />}
+            />
+            <Route
+                path='/ui'
+                render={() => <UI />}
+            />
+            <Route
+                path='/algorithms'
+                render={() => <Algorithms />}
+            />
+          </Switch>
+        </DocsView>
+      <Footer />
     </>
   );
 };
