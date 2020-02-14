@@ -1,10 +1,10 @@
 import React from 'react';
 import Loadable from 'react-loadable';
 import Loading from './CommonUI/PageLoading';
+import styled from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
 
 import NavBar from './NavBar';
-import Footer from './Footer';
 import DocsView from './DocsView';
 
 const About = Loadable({
@@ -20,29 +20,37 @@ const Algorithms = Loadable({
   loading: Loading,
 });
 
+const Layout = styled('div')`
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  overflow-x: hidden;
+`;
+
 const App = () => {
   return (
-    <>
+    <Layout>
       <NavBar />
-        <DocsView>
-          <Switch>
-            <Route
-                exact
-                path='/'
-                render={() => <About />}
-            />
-            <Route
-                path='/ui'
-                render={() => <UI />}
-            />
-            <Route
-                path='/algorithms'
-                render={() => <Algorithms />}
-            />
-          </Switch>
-        </DocsView>
-      <Footer />
-    </>
+      <DocsView>
+        <Switch>
+          <Route
+              exact
+              path='/'
+              render={() => <About />}
+          />
+          <Route
+              path='/ui'
+              render={() => <UI />}
+          />
+          <Route
+              path='/algorithms'
+              render={() => <Algorithms />}
+          />
+        </Switch>
+      </DocsView>
+    </Layout>
   );
 };
 
