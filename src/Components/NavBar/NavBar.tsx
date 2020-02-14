@@ -33,9 +33,9 @@ export default function NavBar({ children, homeButton }: NavBarTypes) {
           onClick={handleSidebarClick}
           aria-label="sidebar close button"
         >
-          <Icon size={'1.75rem'} color='#eeeeee' path={mdiDotsHorizontal} />
+          <Icon size={'1.5rem'} color='#eeeeee' path={mdiDotsHorizontal} />
         </button>
-        <a className='title' href='https://nahomepage.netlify.com/'>Nick Ayres</a>
+        <a className='title' href='https://nahomepage.netlify.com/'>JS Dispatch</a>
       </div>
       { sidebarVisible &&
         <SideBar

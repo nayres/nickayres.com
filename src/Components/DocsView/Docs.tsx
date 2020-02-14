@@ -8,9 +8,7 @@ export interface DocsTypes {
 export default ({ children }: DocsTypes) => {
     return (
         <DocsWrapper>
-            <div className='showcase'>
-                { children }
-            </div>
+            { children }
         </DocsWrapper>
     )
 }
