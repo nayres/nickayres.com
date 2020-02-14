@@ -83,7 +83,6 @@ export default function Editor({ data }: EditorTypes) {
         data={data}
         options={{
           lineNumbers: true,
-          indentUnit: 2,
           styleActiveLine: true,
           matchBrackets: true,
           mode: 'javascript',
