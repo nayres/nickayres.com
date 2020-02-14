@@ -17,6 +17,6 @@ export const Wrapper = styled('div')`
 
   .divider {
     padding: 0 .5rem;
-    background: lightgray;
+    background: #fafafa;
   }
 `;

@@ -14,14 +14,20 @@ interface CodeMirrorTypes {
   options: codemirror.EditorConfiguration;
   onChange: (text: string) => void;
   data: any
+  cursor?: any
 }
 interface EditorTypes {
   onChange?: (text: string) => void;
   data?: any;
+  cursor?: any
+}
+
+function parseSpecialChars(s: string) {
+  return s.replace(/[+]+/g, '\n');
 }
 
 function Code({ onChange, data, options }: CodeMirrorTypes) {
-  const [value, setValue] = useState(data.code);
+  const [value, setValue] = useState(parseSpecialChars(data));
 
   useEffect(() => {
     setValue(value);
@@ -44,6 +50,7 @@ function Code({ onChange, data, options }: CodeMirrorTypes) {
           <CodeMirror
             value={value}
             options={options}
+            cursor={{ line: 0, ch: 0 }}
             onBeforeChange={(editor: any, data: any, value: string) => {
               setValue(value);
               onChange(value);

@@ -1,4 +1,5 @@
 import React from 'react';
+import ProblemNav from '../ProblemNav';
 import { InfoWrapper } from './styles';
 
 interface InfoTypes {

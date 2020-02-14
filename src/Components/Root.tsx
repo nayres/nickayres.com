@@ -1,4 +1,5 @@
 import React from 'react';
+import withApollo from '../services/withApollo';
 import { BrowserRouter } from 'react-router-dom';
 import Providers from './Providers';
 import { DeviceProvider } from './UseDeviceInfo';
@@ -19,4 +20,4 @@ const Root = () => {
   );
 };
 
-export default Root;
+export default withApollo(Root);

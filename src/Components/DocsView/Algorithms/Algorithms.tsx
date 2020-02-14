@@ -1,21 +1,28 @@
 import React from 'react';
-import ProblemNav from './ProblemNav';
+import { useQuery } from '@apollo/react-hooks';
+import { PROBLEMS_QUERY } from './query';
 import ProblemInfo from './ProblemInfo';
+import ProblemNav from './ProblemNav';
 import CodeEditor from './CodeEditor';
 import { Wrapper } from './styles';
 
+
 export default function Algorithms() {
-  const data = {
-    problems: [
-      {
-        language: 'javaScript',
-        title: 'Hello World',
-        description: 'Simply type "Hello world" in between the parenthesis, and run the code!',
-        example: 'console.log("Hello World");',
-        code: 'console.log();',
-      }
-    ]
-  }
+  const { data, loading, error } = useQuery(PROBLEMS_QUERY);
+
+  if (loading) return <>Loading...</>;
+  if (error) return <>{`Error! ${error.message}`}</>;
+
+  const {
+    title,
+    language,
+    author,
+    difficulty,
+    description,
+    example,
+    snippet,
+    testCase,
+  } = data.problems[3];
 
   return (
     <>
@@ -23,15 +30,15 @@ export default function Algorithms() {
       <Wrapper>
         <div className="section">
           <ProblemInfo
-            title={data.problems[0].title}
-            description={data.problems[0].description}
-            example={data.problems[0].example}
+            title={title}
+            description={description}
+            example={example}
           />
         </div>
         <div className="divider" />
         <div className="editor-section">
           <CodeEditor
-            data={data.problems[0]}
+            data={snippet}
           />
         </div>
       </Wrapper>
