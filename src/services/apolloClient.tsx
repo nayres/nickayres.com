@@ -8,7 +8,7 @@ let IS_SERVER = typeof window === 'undefined';
 
 const create = (initialState = {}): ApolloClient<NormalizedCacheObject> => {
   const httpLinkConfig: HttpLink.Options = {
-    uri: 'http://localhost:8000/graphql',
+    uri: "http://localhost:8000/graphql",
   };
 
   if (IS_SERVER) {

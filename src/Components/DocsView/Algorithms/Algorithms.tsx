@@ -18,11 +18,12 @@ export default function Algorithms() {
     language,
     author,
     difficulty,
-    description,
-    example,
-    snippet,
-    testCase,
-  } = data.problems[3];
+    documentation: {
+      description,
+      example
+    },
+    code
+  } = data.problems[2];
 
   return (
     <>
@@ -38,7 +39,7 @@ export default function Algorithms() {
         <div className="divider" />
         <div className="editor-section">
           <CodeEditor
-            data={snippet}
+            data={code}
           />
         </div>
       </Wrapper>

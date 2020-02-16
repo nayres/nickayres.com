@@ -27,13 +27,17 @@ function parseSpecialChars(s: string) {
 }
 
 function Code({ onChange, data, options }: CodeMirrorTypes) {
-  const [value, setValue] = useState(parseSpecialChars(data));
+  const [value, setValue] = useState("");
+  const [testCases, setTestCases] = useState(null);
+  const { snippet, testCase } = data;
 
   useEffect(() => {
-    setValue(value);
+    setValue(parseSpecialChars(snippet));
+    setTestCases(testCase)
     onChange(value);
   }, [onChange]);
 
+  console.log(testCases);
   const runCode = () => {
     const s = document.createElement('script');
     s.textContent = value;

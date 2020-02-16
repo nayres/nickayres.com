@@ -5,13 +5,24 @@ export const PROBLEMS_QUERY = gql`
     problems {
       id
       title
-      language
       author
+      language
       difficulty
-      description
-      example
-      snippet
-      testCase
+      documentation{
+        description
+        example
+        tags
+      }
+      code{
+        snippet
+        testCase {
+          functionCall
+          expectedResult
+        }
+        children{
+          problemID
+        }
+      }
     }
   }
 `;
