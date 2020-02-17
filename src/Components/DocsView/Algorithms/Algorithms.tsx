@@ -12,7 +12,7 @@ export default function Algorithms() {
 
   if (loading) return <>Loading...</>;
   if (error) return <>{`Error! ${error.message}`}</>;
-
+  
   const {
     title,
     language,

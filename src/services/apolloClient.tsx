@@ -7,8 +7,15 @@ let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 let IS_SERVER = typeof window === 'undefined';
 
 const create = (initialState = {}): ApolloClient<NormalizedCacheObject> => {
+  let endPoint;
+  if(process.env.NODE_ENV === 'development') {
+    endPoint = 'http://localhost:8000/graphql'
+  } else {
+    endPoint = 'https://js-dispatch.herokuapp.com/graphql'
+  }
+
   const httpLinkConfig: HttpLink.Options = {
-    uri: "http://localhost:8000/graphql",
+    uri: endPoint,
   };
 
   if (IS_SERVER) {
