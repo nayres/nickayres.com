@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Controlled as CodeMirror } from 'react-codemirror2'
 import * as codemirror from 'codemirror';
 import { EditorWrapper, Content } from './styles';
@@ -26,25 +27,53 @@ function parseSpecialChars(s: string) {
   return s.replace(/[+]+/g, '\n');
 }
 
+function removeSpecialChars(s: string) {
+  return s.replace(/\n/g, '');
+}
+
 function Code({ onChange, data, options }: CodeMirrorTypes) {
-  const [value, setValue] = useState("");
-  const [testCases, setTestCases] = useState(null);
-  const { snippet, testCase } = data;
+  const [value, setValue] = useState('');
+  const [consoleResult, setConsole] = useState<string>('');
+  const [pass, setPass] = useState(Boolean);
+  const {
+    snippet,
+    testCase
+  } = data;
 
   useEffect(() => {
     setValue(parseSpecialChars(snippet));
-    setTestCases(testCase)
     onChange(value);
   }, [onChange]);
 
-  console.log(testCases);
   const runCode = () => {
-    const s = document.createElement('script');
-    s.textContent = value;
-    document.body.appendChild(s);
-    setTimeout(() => {
-      document.body.removeChild(s);
-    }, 2000);
+    const submission = removeSpecialChars(value);
+    let test = testCase[Math.floor(Math.random() * testCase.length)];
+    let result;
+
+    axios({
+      method: 'post',
+      url: 'http://localhost:8000/codeSubmission',
+      data: {
+        functionCall: test.functionCall,
+        userSubmission: submission
+      }
+    })
+    .then(res => {
+      if(removeSpecialChars(res.data.stdout) !== test.expectedResult) {
+        result = res.data.stdout;
+        setPass(false);
+        setConsole(result);
+        console.log(test.expectedResult, result);
+      } else {
+        result = res.data.stdout;
+        setPass(true);
+        setConsole(result);
+        console.log(test.expectedResult, result);
+      }
+    })
+    .catch(err => {
+      console.log(err)
+    });
   };
 
   return (
@@ -63,6 +92,12 @@ function Code({ onChange, data, options }: CodeMirrorTypes) {
         </div>
       </EditorWrapper>
       <div className="editor-controls">
+          {consoleResult &&
+            <p>{consoleResult}</p>
+          }
+          { pass &&
+            <p>Correct!</p>
+          }
         <div id="code-result">
           <button
             id="run-button"
