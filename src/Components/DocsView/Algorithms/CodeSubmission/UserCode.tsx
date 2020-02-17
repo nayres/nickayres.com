@@ -36,11 +36,17 @@ function Code({ onChange, data, options }: CodeMirrorTypes) {
   }, [onChange]);
 
   const runCode = () => {
+    let endPoint;
+    if(process.env.NODE_ENV === 'development') {
+      endPoint = 'http://localhost:8000/codeSubmission'
+    } else {
+      endPoint = 'https://js-dispatch.herokuapp.com/codeSubmission'
+    }
     const submission = removeSpecialChars(value);
     let test = testCase[Math.floor(Math.random() * testCase.length)];
     axios({
       method: 'post',
-      url: 'http://localhost:8000/codeSubmission',
+      url: endPoint,
       data: {
         functionCall: test.functionCall,
         userSubmission: submission
