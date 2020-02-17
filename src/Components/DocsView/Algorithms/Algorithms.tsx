@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { PROBLEMS_QUERY } from './query';
 import ProblemInfo from './ProblemInfo';
 import ProblemNav from './ProblemNav';
-import CodeEditor from './CodeEditor';
+import CodeEditor from './CodeSubmission';
 import { Wrapper } from './styles';
 
 
@@ -32,6 +32,8 @@ export default function Algorithms() {
         <div className="section">
           <ProblemInfo
             title={title}
+            language={language}
+            difficulty={difficulty}
             description={description}
             example={example}
           />

@@ -33,11 +33,12 @@ export const Content = styled('div')`
   .editor-controls {
     display: flex;
     justify-content: flex-end;
-    z-index: 100;
     padding: .75rem;
+    z-index: 200;
   }
 
   #code-result {
+    position: relative;
     #run-button {
       border: 0;
       padding: .5rem 2rem;
@@ -45,10 +46,26 @@ export const Content = styled('div')`
       color: #eeeeee;
       background: #1565c0;
       cursor: pointer;
-
       &:hover {
         background: #0d47a1;
       }
     }
+  }
+`;
+
+export const SubmissionWrapper = styled('div')`
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: white;
+  height: 25%;
+  z-index: 200;
+
+  .sub-content {
+    padding: 2rem;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
   }
 `;
