@@ -123,11 +123,6 @@
   "bugs": {
     "url": "https://github.com/nayres/nickayres.com/issues"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
-  },
   "jest": {
     "roots": [
       "<rootDir>/src"
@@ -182,6 +177,11 @@
     "presets": [
       "react-app"
     ]
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js"
   },
   "proxy": "http://localhost:8000/"
 }
