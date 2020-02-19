@@ -7,33 +7,59 @@ interface SubmissionTypes {
   expected: string,
   stdout: string,
   memoryUsage: string,
-  cpuUsage: number
+  cpuUsage: number,
+  onClick: () => void;
 }
 
-function SubmissionResult({isCorrect, isIncorrect, expected, stdout, memoryUsage, cpuUsage}: SubmissionTypes) {
+function SubmissionResult({
+  isCorrect,
+  isIncorrect,
+  expected,
+  stdout,
+  memoryUsage,
+  cpuUsage,
+  onClick
+}: SubmissionTypes) {
   return (
-    <SubmissionWrapper>
+    <SubmissionWrapper
+      onClick={onClick}
+    >
       <div className="sub-content">
-        <div>
+        <div className="sub-controls">
+          <button
+            id="sub-back-button"
+            type="button"
+            onClick={onClick}
+          >
+            back
+          </button>
+        </div>
+        <div className="sub-binary-result">
           { isCorrect &&
-            <strong>Correct!</strong>
+            <h2 className="sub-result" id="correct">Correct!</h2>
           }
           { isIncorrect &&
-            <strong>Incorrect..</strong>
+            <h2 className="sub-result" id="incorrect">Incorrect..</h2>
           }
         </div>
-        <div>
-          Result: {stdout}
-        </div>
-        <div>
-          Expected: {expected}
-        </div>
-        <div>
-          Memory Usage: {memoryUsage}
-        </div>
-        <div>
-          Time: {cpuUsage}ms
-        </div>
+        <>
+          <div className="sub-console">
+            <h2>Expected: </h2>
+            <span>{expected}</span>
+          </div>
+          <div className="sub-console">
+            <h2>Result: </h2>
+            <span>{stdout}</span>
+          </div>
+          <div className="sub-console">
+            <h2>Memory Usage: </h2>
+            <span>{memoryUsage}</span>
+          </div>
+          <div className="sub-console">
+            <h2>Time: </h2>
+            <span>{cpuUsage}ms</span>
+          </div>
+        </>
       </div>
     </SubmissionWrapper>
   );

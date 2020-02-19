@@ -27,7 +27,6 @@ function Editor({ data }: EditorTypes) {
           smartIndent: false,
           mode: 'javascript',
           indentWithTabs: true,
-          // lineWrapping: true,
           theme: 'material-darker'
         }}
       />

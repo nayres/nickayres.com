@@ -12,20 +12,56 @@ export const InfoWrapper = styled('div')`
     overflow: auto;
   }
 
-  .info-title {
-    padding: 1rem;
+  .info-header {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid lightgrey;
-    > span {
-      font-size: 1.25rem;
+    padding: 1rem 1.25rem;
+
+    .info-title {
+      margin-right: .75rem;
+      margin-bottom: .75rem;
+      > strong {
+        font-size: 1.5rem;
+      }
+    }
+
+    .info-meta-data {
+      display: flex;
+      flex-direction: row;
+      margin-right: .75rem;
+      font-size: .75rem;
+
+      > p {
+        margin-right: .25rem;
+        color: grey;
+      }
+      > span {
+        margin-right: .75rem;
+      }
     }
   }
 
-  .info-description {
-    width: 100%;
+  .info-data {
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
+    padding: 1.25rem;
 
-    > p {
-      padding: 1rem;
+    .info-data-item {
+      &:first-child {
+        margin-bottom: 1rem;
+      }
+
+      > p {
+        margin-bottom: .5rem;
+        font-size: .75rem;
+      }
+      .info-text-block {
+        padding: 1rem;
+        background: #eeeeee;
+        font-size: .75rem;
+      }
     }
   }
 

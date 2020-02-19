@@ -16,7 +16,7 @@ export const Wrapper = styled('div')`
   }
 
   .divider {
-    padding: 0 .5rem;
-    background: #fafafa;
+    width: 1rem;
+    background: #eeeeee;
   }
 `;

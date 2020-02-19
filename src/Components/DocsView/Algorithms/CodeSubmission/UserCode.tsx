@@ -89,6 +89,7 @@ function Code({ onChange, data, options }: CodeMirrorTypes) {
       </EditorWrapper>
       { subOutput &&
         <SubmissionResult
+          onClick={() => setSubOutput("")}
           isCorrect={pass}
           isIncorrect={!pass}
           expected={expectResult}
