@@ -72,7 +72,7 @@ main {
 }
 .hero-title > h1 {
   color: var(--white);
-  font-size: 6rem;
+  font-size: 8rem;
   font-weight: 900;
   text-transform: uppercase;
   margin-block-start: 0;
@@ -80,27 +80,24 @@ main {
 
 .hero-nav {
   display: flex;
-  width:100%;
-  justify-content: flex-end;
+  width: 100%;
+  justify-content: center;
   gap: 4rem;
 }
 
-.hero-nav > nav {
+.hero-nav > ul {
   display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
-}
-.hero-nav > nav > ul {
+  gap: 2rem;
   padding: 0;
 }
 
-.hero-nav > nav > ul > li {
+.hero-nav > ul > li {
   list-style-type: none;
 }
 
 .nav-link {
   color: var(--white);
-  font-size: 3rem;
+  font-size: 2rem;
   height: 5rem;
 }
 
