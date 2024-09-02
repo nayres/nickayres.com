@@ -427,7 +427,7 @@ main {
 /* mobile */
 @media screen and (max-width: 575px) {
   .hero-section {
-    padding: 3rem 1rem;
+    padding: 2rem;
   }
   
   .hero-inner {
