@@ -291,11 +291,6 @@ main {
   font-size: 1.5rem;
   font-weight: 600;
   white-space: nowrap;
-  transition: font-size 0.3s ease;
-}
-
-.bullet-content > span:hover {
-  font-size: 2rem;
 }
 
 .about-section {
@@ -451,7 +446,7 @@ main {
 @media screen and (max-width: 575px) {
   .hero-section {
     padding: 2rem 1rem;
-    align-items: center;
+    min-height: 100%;
   }
 
   .hero-inner {
@@ -469,7 +464,7 @@ main {
   }
 
   .hero-title > h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
   }
   
@@ -594,13 +589,9 @@ main {
   }
 
   .bullet-content > span {
-    font-size: 1rem;
+    font-size: 0.75rem;
     white-space: unset;
     text-align: center;
-  }
-  
-  .bullet-content > span:hover {
-    font-size: 1rem;
   }
 
   .about-section {
@@ -755,10 +746,6 @@ main {
   .bullet-content > span {
     font-size: 1.5rem;
   }
-  
-  .bullet-content > span:hover {
-    font-size: 1.5rem;
-  }
 
   .about-section {
     gap: 1rem;
@@ -860,10 +847,6 @@ main {
   }
 
   .bullet-content > span {
-    font-size: 1.5rem;
-  }
-  
-  .bullet-content > span:hover {
     font-size: 1.5rem;
   }
 
