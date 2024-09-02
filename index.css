@@ -502,6 +502,10 @@ main {
     padding-bottom: 0;
   }
   
+  .philo-bullet {
+    transform: skew(0, 0);
+  }
+  
   .bullet-content {
     min-width: none;
   }
