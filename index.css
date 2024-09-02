@@ -384,7 +384,7 @@ main {
   justify-content: center;
 }
 
-.credits > h3 {
+.credits > h1 {
   font-size: 0.75rem;
   font-weight: 400;
 }
