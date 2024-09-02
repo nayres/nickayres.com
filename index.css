@@ -240,7 +240,7 @@ main {
   width: 100%;
   height: 33.3333%;
   opacity: 1;
-  transform: skew(0deg, 168deg);
+  transform: skew(0deg, 169deg);
 }
 
 .philo-bullet > .bullet {
@@ -427,11 +427,15 @@ main {
 /* mobile */
 @media screen and (max-width: 575px) {
   .hero-section {
-    padding: 2rem 2rem;
+    padding: 3rem 1rem;
   }
   
   .hero-inner {
     gap: 0;
+  }
+
+  .hero-title {
+    gap: 1rem;
   }
   
   .hero-title > h4 {
@@ -441,7 +445,7 @@ main {
   }
 
   .hero-title > h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 2px;
     font-weight: 900;
   }
@@ -462,16 +466,17 @@ main {
     display: flex;
     position: relative;
     align-items: center;
+    height: 33rem;
   }
   
   #philosophy-svg {
-    left: -37rem;
+    left: -48rem;
     top: -4rem;
   }
   
   .philosophy-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     gap: 0.5rem;
     padding: 2rem;
@@ -479,7 +484,7 @@ main {
   }
   
   .philosophy-header > h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .philosophy-tabs {
@@ -493,8 +498,8 @@ main {
   }
   
   .philosophy-inner {
-    padding: 3rem 0;
-    padding-bottom: 4rem;
+    padding: 2rem 0;
+    padding-bottom: 0;
   }
   
   .bullet-content {
@@ -522,7 +527,7 @@ main {
   }
   
   .about-section-header > h4 {
-    font-size: 3rem;
+    font-size: 2.25rem;
   }
   
   .about-tabs {
