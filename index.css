@@ -53,7 +53,7 @@ main {
   background-image: url(./assets/wesley-tingey-desktop.jpg);
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .hero-filter {
@@ -464,12 +464,12 @@ main {
   }
   
   .hero-name > h4 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 700;
   }
 
   .hero-title > h1 {
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 800;
   }
   
@@ -494,18 +494,18 @@ main {
   .subtitle > p {
     color: var(--white);
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
-  .skills-marquee {
-    font-size: 2rem;
+  .marquee {
+    font-size: 1.75rem;
   }
 
   .philosophy-section {
     display: flex;
     position: relative;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .svg-box {
@@ -540,7 +540,7 @@ main {
   }
   
   .philosophy-header > h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: unset;
   }
 
@@ -560,7 +560,7 @@ main {
   }
   
   .philosophy-inner {
-    padding: 2rem;
+    padding: 2rem 1rem;
     padding-bottom: 2rem;
   }
 
@@ -619,7 +619,7 @@ main {
   }
   
   .about-section-header > h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: unset;
   }
   
