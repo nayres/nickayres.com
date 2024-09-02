@@ -12,41 +12,30 @@
   <body>
     <main>
       <header class="hero-section">
+        <div class="hero-filter"></div>
         <div class="hero-inner">
+          <div class="hero-name">
+            <h4>Nickolas Ayres</h4>        
+          </div>                          
           <div class="hero-title">
-            <h4>Nickolas Ayres</h4>
             <h1>User Focused Problem Solver</h1>
           </div>
-          <nav class="hero-nav">
-            <ul>
-              <li>
-                <a href="#philosophy" class="link nav-link">
-                  <span>Philosophy</span>
-                </a>
-              </li>
-              <li>
-                <a href="#about" class="link nav-link">
-                  <span>About</span>
-                </a>
-              </li>
-              <li>
-                <a href="#links" class="link nav-link">
-                  <span>Links</span>
-                </a>
-              </li>
-            </ul>
-          </nav>                                                    
+          <div class="subtitle">
+            <p>
+              Building products that simplify the lives of users. 
+            </p>
+          </div>
         </div>
       </header>
       <section class="skills-section">
-        <div class="skills-mask">
-          <div class="skills-marquee">
+        <div class="mask">
+          <div class="marquee">
             <span>Elasticsearch. <b>TypeScript.</b> MongoDB. DataDog. <b>GraphQL.</b> AWS. REST. <b>PostgresSQL.</b> Azure. Amazon SQS. JavaScript. <b>Python.</b> Django. CloudFlare. Amazon API Gateway. HTML5. CSS3. <b>React.</b> NX. DataDog. <b>NextJS.</b> Webpack. Kafka. Jest. <b>unit testing.</b> Babel. Memcached. <b>NGINX.</b> HTTP. TurboRepo. <b>Splunk.</b> SQL. NoSQL.  DynamoDB. MySQL. <b>data structures.</b> Redis. Vercel. <b>algorithms.</b> Node.</span>
             <span>Elasticsearch. <b>TypeScript.</b> MongoDB. DataDog. <b>GraphQL.</b> AWS. REST. <b>PostgresSQL.</b> Azure. Amazon SQS. JavaScript. <b>Python.</b> Django. CloudFlare. Amazon API Gateway. HTML5. CSS3. <b>React.</b> NX. DataDog. <b>NextJS.</b> Webpack. Kafka. Jest. <b>unit testing.</b> Babel. Memcached. <b>NGINX.</b> HTTP. TurboRepo. <b>Splunk.</b> SQL. NoSQL.  DynamoDB. MySQL. <b>data structures.</b> Redis. Vercel. <b>algorithms.</b> Node.</span>
           </div>
         </div>
       </section>
-      <section class="philosophy-section" id="philosophy">
+      <section class="philosophy-section">
         <div class="philosophy-header">
           <h1>Philosophy</h1>
           <div class="philosophy-tabs">
@@ -56,7 +45,7 @@
         </div>
         <div class="philosophy-content">
           <div class="svg-box">
-            <svg id="philosophy-svg" width="1306" height="650" viewBox="0 0 1306 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="philosophy-svg-desktop" width="1306" height="650" viewBox="0 0 1306 650" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M721.9 461.006L0 257.945V650H721.9V461.006Z" fill="#302B2B"/>
               <path d="M0 191V257.945L721.901 461L1305.9 337.003L1036.26 276.503L1036.9 311.002L719.901 383.502L0 191Z" fill="#E2DDD3"/>
               <path d="M718.901 308.999L0 125.657V191L719.401 383.999L718.901 308.999Z" fill="#302B2B"/>
@@ -64,7 +53,16 @@
               <path d="M0 68.4902V125.657L718.901 309L1034.9 247L786.176 195.506V232.998L719.901 247.998L0 68.4902Z" fill="#E2DDD3"/>
               <path d="M0 0V17.0782L720.4 175.103L785.9 162.103L0 0Z" fill="#E2DDD3"/>
               <path d="M0 0V17.0782L720.4 175.103L785.9 162.103L0 0Z" fill="#E2DDD3"/>
-            </svg>            
+            </svg>
+            <svg id="philosophy-svg-mobile" width="1306" height="650" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M721.9 461.006L0 257.945V650H721.9V461.006Z" fill="#302B2B"/>
+              <path d="M0 191V257.945L721.901 461L1305.9 337.003L1036.26 276.503L1036.9 311.002L719.901 383.502L0 191Z" fill="#E2DDD3"/>
+              <path d="M718.901 308.999L0 125.657V191L719.401 383.999L718.901 308.999Z" fill="#302B2B"/>
+              <path d="M720.401 175.002L0 17.0782V68.4902L719.901 248.002L720.401 175.002Z" fill="#302B2B"/>
+              <path d="M0 68.4902V125.657L718.901 309L1034.9 247L786.176 195.506V232.998L719.901 247.998L0 68.4902Z" fill="#E2DDD3"/>
+              <path d="M0 0V17.0782L720.4 175.103L785.9 162.103L0 0Z" fill="#E2DDD3"/>
+              <path d="M0 0V17.0782L720.4 175.103L785.9 162.103L0 0Z" fill="#E2DDD3"/>
+            </svg>        
           </div>
           <div class="philosophy-inner">
             <div class="philosophy-tab-content active" id="philosophy-tech">
@@ -110,7 +108,7 @@
           </div>  
         </div>
       </section>
-      <section class="about-section" id="about">
+      <section class="about-section">
         <div class="about-section-header">
           <h1>About</h1>
           <div class="about-tabs">
@@ -141,7 +139,7 @@
           </p>
         </div>
       </section>
-      <section class="links-section" id="links">
+      <section class="links-section">
         <div class="links">
           <a class="link" target="_blank noopener noreferrer" href="./assets/ayres-resume-2024.pdf" download>Resume</a>
           <a class="link" target="_blank noopener noreferrer" href="https://www.linkedin.com/in/ayresnick">linkedIn</a>
@@ -151,6 +149,7 @@
       </section>
       <footer>
         <div class="credits">
+          <a class="link" target="_blank noopener noreferrer" href="https://unsplash.com/@wesleyphotography">@wesleyphotography</a>
           <h1>Designed & built by Nick Ayres</h1>
         </div>
       </footer>
