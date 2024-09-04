@@ -553,11 +553,7 @@ main {
   }
 }
 
-@media (width <= 425px) {
-
-}
-
-@media (width <= 500px) {
+@media screen and (max-width:768px) {
   .hero-section {
     padding: 2rem 2rem;
     border-radius: 0 0 1.5rem 1.5rem;
