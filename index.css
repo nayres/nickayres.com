@@ -49,18 +49,20 @@ main {
 .hero-section {
   position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding: 4rem;
   padding-top: 2rem;;
   background-color: var(--black);
-  min-height: 100vh;
   border-radius: 0 0 3rem 3rem;
 }
 
 .hero-inner {
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
   width: 100%;
-  gap: 2rem;
+  gap: 4rem;
   z-index: 1;
 }
 
@@ -75,9 +77,9 @@ main {
   flex-direction: column;
 }
 
-.hero-name > h4 {
+.hero-name > h1 {
   color: var(--orange);
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
 }
 
@@ -213,7 +215,7 @@ main {
 
 .philosophy-tab.active {
   text-decoration: underline;
-  color: var(--pink-font);
+  color: var(--white);
 }
 
 .philosophy-inner {
@@ -464,7 +466,7 @@ main {
 
 .about-tab.active {
   text-decoration: underline;
-  color: var(--black);
+  color: var(--orange);
 }
 
 .about-tab-content {
@@ -553,7 +555,51 @@ main {
   }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 1145px) {
+  .how-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 3rem;
+  }
+  .how-col {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .how-col.center {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .how-title {
+    align-items: center;
+  }
+  .how-title > h1 {
+    font-size: 3rem;
+    z-index: 1;
+  }
+  .how-title > h2 {
+    font-size: 2rem;
+    color: var(--orange);
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  .how-title > h3 {
+    display: none;
+  }
+  .how-row {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: var(--white);
+  }
+  .how-content {
+    flex-direction: column;
+    flex: 0 0 60%;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .hero-section {
     padding: 2rem 2rem;
     border-radius: 0 0 1.5rem 1.5rem;
@@ -562,7 +608,7 @@ main {
     flex-direction: column;
     width: 100%;
   }
-  .hero-name > h4 {
+  .hero-name > h1 {
     font-size: 2rem;
   }
   .hero-title > h1 {
@@ -608,10 +654,15 @@ main {
     padding: 2rem;
   }
   .philosophy-header > h1 {
-    font-weight: 700;
-    font-size: 3rem;
-    letter-spacing: 0.25rem;
+    font-weight: 500;
+    font-size: 2.5rem;
+    letter-spacing: 0px;
+    text-align: center;
   }
+  .philosophy-tab {
+    font-size: 1.25rem;
+  }
+
   .bullet-group {
     justify-content: center;
   }
@@ -687,15 +738,17 @@ main {
   .about-section-header {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
   }
   .about-section-header > h1 {
     color: var(--black);
-    font-weight: 900;
-    font-size: 3rem;
-    letter-spacing: 0.188rem;
-    text-transform: uppercase;
+    font-size: 2.75rem;
+    font-weight: 700;
+    text-transform: unset;
+  }
+  .about-tab {
+    font-size: 1.25rem;
   }
   .about-tab-content.active > p {
     font-size: 1.25rem;
@@ -706,7 +759,6 @@ main {
   .links-section {
     justify-content: center;
     padding: 1rem 2rem;
-    padding-bottom: 0;
   }
   .links {
     align-items: center;
