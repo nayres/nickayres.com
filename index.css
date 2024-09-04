@@ -1,7 +1,8 @@
 :root {
-  --black:  #302B2B;
-  --yellow: #fad332;
-  --orange: #ff3603;
+  --black:  rgb(11, 20, 24, 1);
+  --yellow: rgb(204, 187, 0, 1);
+  --yellow-hover: rgb(204, 187, 0, 0.75);
+  --orange: #e62e00;
   --pink-bg: #d44d4d;
   --white: rgb(226, 221, 211);
   --shadow: rgba(226, 221, 211, 0.747);
@@ -48,35 +49,25 @@ main {
 .hero-section {
   position: relative;
   display: flex;
-  padding: 2rem 4rem;
-  background-color: var(--white);
-  background-image: url(./assets/wesley-tingey-desktop.jpg);
-  background-position: center;
-  background-size: cover;
+  padding: 4rem;
+  padding-top: 2rem;;
+  background-color: var(--black);
   min-height: 100vh;
-}
-
-.hero-filter {
-  position: absolute;
-  display: flex;
-  background-color: rgba(48, 43, 43, 0.777);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  border-radius: 0 0 3rem 3rem;
 }
 
 .hero-inner {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 4rem;
+  gap: 2rem;
   z-index: 1;
 }
 
 .hero-title {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .hero-name {
@@ -85,35 +76,65 @@ main {
 }
 
 .hero-name > h4 {
-  color: var(--pink-bg);
+  color: var(--orange);
   font-size: 3rem;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 .hero-title > h1 {
   color: var(--white);
-  font-size: 8rem;
+  font-size: 5rem;
   font-weight: 900;
   text-transform: uppercase;
   margin-block-start: 0;
 }
 
 .subtitle {
-  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1 1 100%;
 }
 
 .subtitle > p {
-  color: var(--white);
+  display: flex;
+  color: var(--yellow);
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  flex: 0 1 50%;
+}
+
+.subtitle > .divider {
+  height: 1px;
+  width: 2rem;
+  background-color: var(--orange);
+}
+
+.hero-button {
+  display: flex;
+  flex: 1 1 25%;
+}
+
+.about-button {
+  appearance: none;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--yellow);
+  border-radius: 32px;
+}
+
+.about-button:hover {
+  background: var(--yellow-hover);
 }
 
 .skills-section {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 1rem 0;
+  padding: 3rem 0;
   overflow: hidden;
   background-color: var(--white);
 }
@@ -124,7 +145,7 @@ main {
 }
 
 .marquee {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 500;
   color: var(--black);
   white-space: nowrap;
@@ -141,21 +162,20 @@ main {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  height: 42.625rem;
-  background-color: var(--pink-bg);
+  background-color: var(--orange);
+  border-radius: 0 3rem 0 0;
 }
 
 .philosophy-content {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .philosophy-header {
   display: flex;
   align-items: flex-end;
+  justify-content: flex-end;
   width: 100%;
   gap: 2rem;
   padding: 2rem 4rem;
@@ -165,10 +185,9 @@ main {
 
 .philosophy-header > h1 {
   color: var(--white);
-  font-weight: 900;
-  font-size: 5rem;
+  font-weight: 700;
+  font-size: 4rem;
   letter-spacing: 0.25rem;
-  text-transform: uppercase;
 }
 
 .philosophy-tabs {
@@ -200,33 +219,30 @@ main {
 .philosophy-inner {
   display: flex;
   height: 100%;
-  padding: 2rem;
+  padding-bottom: 4rem;
+  padding-top: 1rem;
+  position: absolute;
+  width: 100%;
 }
 
 .svg-box {
   display: flex;
   align-items: center;
-  position: absolute;
-  height: 100%;
-  left: 0;
-  bottom: 0;
+  position: relative;
+  left: -6.75rem;
   z-index: 0;
-}
-
-#philosophy-svg-desktop {
-  width: 100%;
-  height: 100%;
+  transform: scale(1.5);
 }
 
 #philosophy-svg-mobile {
   display: none;
 }
 
-#philosophy-svg.slide-in {
+#philosophy-svg-desktop.slide-in {
   animation: slideIn 1s ease-out forwards;
 }
 
-#philosophy-svg.slide-out {
+#philosophy-svg-desktop.slide-out {
   animation: slideOut 1s ease-out forwards;
 }
 
@@ -239,9 +255,9 @@ main {
 .philosophy-tab-content.active {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 2rem;
+  position: relative;
+  gap: 30%;
   font-weight: 400;
   color: var(--black);
   opacity: 1;
@@ -254,21 +270,25 @@ main {
   display: flex;
   justify-content: center;
   position: relative;
-  width: 100%;
   opacity: 1;
-  transform: skew(0deg, 168deg);
+}
+
+.bullet-group {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .bullet {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -0.5rem;
+  position: relative;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   background-color: var(--black);
-  color: var(--white);
+  color: var(--yellow);
   font-size: 2rem;
   font-weight: bold;
   z-index: 1;
@@ -277,20 +297,122 @@ main {
 .bullet-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-width: 17rem;
+  position: absolute;
+  left: 3.25rem;
+  background-color: var(--yellow);
+  border-radius: 2rem;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
   animation: tab-content-slide 400ms ease-in-out;
 }
 
-.bullet-content > span {
+.bullet-content.right {
+  right: 3.25rem;
+  left: unset;
+}
+
+.bullet-content > h1 {
   color: var(--black);
-  background-color: var(--yellow);
-  border-radius: 0.25rem;
-  padding: 1rem 2rem;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
+}
+
+.bullet-content > p {
+  color: var(--black);
+  font-size: 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.how-section {
+  display: flex;
+  padding: 4rem 3rem;
+  gap: 2rem;
+}
+
+.how-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 1 40%;
+  position: relative;
+}
+.how-title > h1 {
+  font-size: 4rem;
+  z-index: 1;
+}
+.how-title > h2 {
+  font-size: 3rem;
+  color: var(--orange);
+  z-index: 1;
+}
+.how-title > h3 {
+  position: absolute;
+  font-size: 10rem;
+  color: var(--yellow-hover);
+  z-index: 0;
+  right: 0;
+}
+
+.how-content {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 60%;
+  gap: 4rem;
+  background-color: var(--black);
+  border-radius: 3rem;
+  padding: 4rem;
+  color: var(--white);
+}
+
+.how-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--white);
+}
+
+.how-col {
+  display: flex;
+  height: 100%;
+  padding: 1rem;
+}
+
+.how-col span {
+  margin-top: 0.25rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.how-col p {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.how-col.col-sm {
+  flex: 0 0 10%;
+}
+.how-col.col-md {
+  flex: 0 1 30%;
+}
+.how-col.col-lg {
+  flex: 0 1 60%;
+}
+
+.how-col.center {
+  justify-content: center;
+}
+.how-col.end {
+  justify-content: flex-end;
+}
+
+.row-icon {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: grey;
 }
 
 .about-section {
@@ -300,6 +422,7 @@ main {
   padding: 2rem 4rem;
   min-height: 32rem;
   background-color: var(--yellow);
+  border-radius: 0 0 3rem 3rem;
 }
 
 .about-section-header {
@@ -430,445 +553,171 @@ main {
   }
 }
 
-@media screen and (hover: none) {
-  .bullet-content > span:hover {
-    font-size: 1.25;
-  }
-  .philosophy-tab:hover {
-    color: var(--black);
-  }
-  .about-tab:hover {
-    color: var(--black);
-  }
+@media (width <= 425px) {
+
 }
 
-/* mobile */
-@media screen and (max-width: 575px) {
+@media (width <= 500px) {
   .hero-section {
-    padding: 2rem 1rem;
-    min-height: 100%;
+    padding: 2rem 2rem;
+    border-radius: 0 0 1.5rem 1.5rem;
   }
-
-  .hero-inner {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 2rem;
-    z-index: 1;
-    text-align: center;
-  }
-  
-  .hero-name > h4 {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-
-  .hero-title > h1 {
-    font-size: 2rem;
-    font-weight: 800;
-  }
-  
-  .hero-image {
-    display: none;
-  }
-
-  .subtitle {
-    width: 100%;
-  }
-
   .hero-title {
-    display: flex;
     flex-direction: column;
+    width: 100%;
   }
-
-  .hero-name {
-    display: flex;
+  .hero-name > h4 {
+    font-size: 2rem;
+  }
+  .hero-title > h1 {
+    font-size: 3rem;
+  }
+  .subtitle {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: unset;
   }
-
   .subtitle > p {
-    color: var(--white);
     font-weight: 500;
     font-size: 1.5rem;
+    flex: unset;
+  }
+  .subtitle > .divider {
+    height: 10rem;
+    width: 1px;
+    background-color: var(--orange);
+  }
+  .hero-button {
+    display: flex;
+    flex: unset;
+  }
+
+  .skills-section {
+    padding: 2rem;
+    width: unset;
   }
 
   .marquee {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .philosophy-section {
-    display: flex;
-    position: relative;
+    border-radius: 0 1.5rem 0 0;
+  }
+  .philosophy-header {
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    gap: 1rem;
+    padding: 2rem;
   }
-
-  .svg-box {
-    width: 100%;
+  .philosophy-header > h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
   }
-
-  #philosophy-svg-desktop {
+  .bullet-group {
+    justify-content: center;
+  }
+  .bullet-content {
+    left: unset;
+    top: 2.25rem;
+    text-align: center;
+    white-space: wrap;
+    border-radius: 1.5rem;
+  }
+  .bullet-content.right {
+    right: unset;
+  }
+  .bullet-content > h1 {
+    white-space: pre-wrap;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .bullet-content > p {
     display: none;
   }
 
-  #philosophy-svg-mobile {
-    position: absolute;
-    display: block;
-    left: -92%;
-  }
-
-  #philosophy-svg.slide-in {
-    animation: none;
-  }
-  
-  #philosophy-svg.slide-out {
-    animation: none;
-  }
-  
-  .philosophy-header {
-    display: flex;
-    align-items: center;
+  .how-section {
     flex-direction: column;
-    gap: 3rem;
-    padding: 2rem 0;
-    padding-bottom: 0;
-  }
-  
-  .philosophy-header > h1 {
-    font-size: 2rem;
-    letter-spacing: unset;
-  }
-
-  .philosophy-tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: unset;
-  }
-  
-  .philosophy-tab {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-
-  .philosophy-tab:hover {
-    color: var(--black);
-  }
-  
-  .philosophy-inner {
     padding: 2rem 1rem;
-    padding-bottom: 2rem;
+    gap: 3rem;
   }
-
-  .philosophy-tab-content.active {
-    gap: 25%;
-  }
-
-  .philo-bullet {
-    transform: skew(0, 0);
-  }
-
-  .philo-bullet:nth-child(even) {
-    justify-content: flex-end;
-  }
-
-  .philo-bullet:nth-child(odd) {
+  .how-col {
+    width: 100%;
     justify-content: flex-start;
   }
-
-  .bullet-content {
-    flex-direction: row-reverse;
+  .how-col.center {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .how-title {
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    min-width: unset;
-    animation: none;
   }
-
-  .bullet {
-    margin-top: 0;
+  .how-title > h1 {
+    font-size: 3rem;
+    z-index: 1;
   }
-
-  .bullet-content > span {
-    font-size: 0.75rem;
-    white-space: unset;
-    text-align: center;
+  .how-title > h2 {
+    font-size: 2rem;
+    color: var(--orange);
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  .how-title > h3 {
+    display: none;
+  }
+  .how-row {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: var(--white);
+  }
+  .how-content {
+    flex-direction: column;
+    flex: 0 0 60%;
+    gap: 1rem;
+    padding: 1rem;
   }
 
   .about-section {
-    gap: 3rem;
-    padding: unset;
-    min-height: 825px;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    min-height: 32rem;
+    background-color: var(--yellow);
+    border-radius: 0 0 1.5rem 1.5rem;
   }
-  
   .about-section-header {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 0;
-    padding-bottom: 0;
     gap: 2rem;
+    width: 100%;
   }
-  
   .about-section-header > h1 {
-    font-size: 2rem;
-    letter-spacing: unset;
-  }
-  
-  .about-tabs {
-    gap: 0.5rem;
-    margin-bottom: 0;
-  }
-
-  .about-tab {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-
-  .about-tab:hover {
     color: var(--black);
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 0.188rem;
+    text-transform: uppercase;
   }
-
-  .about-tab-content.active {
-    padding: 0 2rem;
-    padding-bottom: 2rem;
-    animation: none;
-  }
-
   .about-tab-content.active > p {
     font-size: 1.25rem;
-  }
-
-  .links > .link {
-    font-size: 1rem;
-    height: fit-content;
+    font-weight: 400;
+    color: var(--black);
   }
 
   .links-section {
+    justify-content: center;
     padding: 1rem 2rem;
-  }  
-
+    padding-bottom: 0;
+  }
   .links {
+    align-items: center;
+    justify-content: space-around;
     gap: 1rem;
   }
-}
-
-/* large mobile */
-@media screen and (min-width: 600px) and (max-width: 767.98px) {
-  .hero-section {
-    padding: 2rem 1rem;
-    align-items: center;
-  }
-
-  .hero-inner {
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .hero-title > h4 {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .hero-title > h1 {
-    font-size: 3.25rem;
-    font-weight: 900;
-    text-align: center;
-  }
-
-  .subtitle > p {
-    color: var(--white);
-    font-weight: 500;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .skills-marquee {
-    font-size: 2rem;
-  }
-
-  .philosophy-section {
-    display: flex;
-    position: relative;
-    align-items: center;
-    height: unset;
-  }
-  
-  .svg-box {
-    height: unset;
-  }
-  
-  .philosophy-inner {
-    display: flex;
-    height: 100%;
-  }
-  
-  #philosophy-svg.slide-in {
-    animation: none;
-  }
-  
-  #philosophy-svg.slide-out {
-    animation: none;
-  }
-
-  .philosophy-header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 2rem 0;
-    padding-bottom: 0;
-  }
-  
-  .philosophy-header > h1 {
-    font-size: 4rem;
-  }
-  
-  .philosophy-tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: unset;
-  }
-  
-  .philosophy-inner {
-    padding: 3rem 0;
-    padding-bottom: 3rem;
-  }
-
-  .philosophy-tab:hover {
-    color: var(--black);
-  }
-  
-  .philo-bullet {
-    transform: skew(0, 0);
-  }
-
-  .bullet-content > span {
-    font-size: 1.5rem;
-  }
-
-  .about-section {
-    gap: 1rem;
-    padding: 2rem;
-  }
-  
-  .about-section-header {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .about-section-header > h1 {
-    font-size: 4rem;
-  }
-  
-  .about-tabs {
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .about-tab:hover {
-    color: var(--black);
-  }
-}
-
-/* tablets */
-@media screen and (min-width: 768px) and (max-width: 1031px) {
-  .hero-section {
-    padding: 2rem 2rem;
-    justify-content: center;
-  }
-
-  .hero-inner {
-    gap: 1rem;
-  }
-  
-  .hero-title > h4 {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-
-  .hero-title > h1 {
-    font-size: 5rem;
-    font-weight: 900;
-  }
-
-  .skills-marquee {
-    font-size: 3rem;
-  }
-
-  .philosophy-section {
-    display: flex;
-    position: relative;
-    align-items: center;
-    height: unset;
-  }
-  
-  .philosophy-content {
-    justify-content: flex-end;
-  }
-
-  .svg-box {
-    height: unset;
-  }
-  
-  .philosophy-inner {
-    padding: 2rem;
-    padding-bottom: 2rem;
-  }
-  
-  #philosophy-svg.slide-in {
-    animation: none;
-  }
-  
-  #philosophy-svg.slide-out {
-    animation: none;
-  }
-
-  .philosophy-header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 2rem;
-    padding-bottom: 0;
-  }
-  
-  .philosophy-header > h1 {
-    font-size: 4rem;
-  }
-  
-  .philosophy-tab:hover {
-    color: var(--black);
-  }
-
-  .philo-bullet {
-    align-items: flex-end;
-    transform: skew(0, 0);
-  }
-
-  .bullet-content > span {
-    font-size: 1.5rem;
-  }
-
-  .about-section {
-    gap: 1rem;
-    padding: 2rem;
-  }
-
-  .about-section-header {
-    align-items: center;
-  }
-  
-  .about-section-header > h1 {
-    font-size: 4rem;
-  }
-  
-  .about-tabs {
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .about-tab:hover {
-    color: var(--black);
+  .links > .link {
+    font-size: 1.25rem;
   }
 }
