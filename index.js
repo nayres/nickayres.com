@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let aboutTabContent = document.querySelectorAll('.about-tab-content');
   let philoTabs = document.querySelectorAll('.philosophy-tab');
   let philoTabContent = document.querySelectorAll('.philosophy-tab-content');
-  let philosophySection = document.querySelectorAll("#philosophy");
-  let philosophySvg = document.querySelector('#philosophy-svg');
+  let philosophySection = document.querySelectorAll(".philosophy-section");
+  let philosophySvg = document.querySelector('#philosophy-svg-desktop');
 
   const options = {
     threshold: 0.25
