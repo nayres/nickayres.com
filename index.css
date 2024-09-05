@@ -3,7 +3,9 @@
   --yellow: #ccbb00;
   --yellow-hover: rgb(204, 187, 0, 0.75);
   --orange: #e62e00;
-  --pink-bg: #d44d4d;
+  --grey: #9E9191;
+  --pink: #D44D4D;
+  --pink-hover: rgba(212, 77, 77, 0.676);
   --white: rgb(226, 221, 211);
   --shadow: rgba(226, 221, 211, 0.747);
   font-family: "Montserrat", sans-serif;
@@ -50,25 +52,40 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 4rem;
-  padding-top: 2rem;;
+  padding: 2rem 4rem;
+  padding-bottom: 4rem;
+  gap: 1rem;
   background-color: var(--black);
-  border-radius: 0 0 3rem 3rem;
+  border-radius: 0 0 2.5rem 2.5rem;
 }
 
 .hero-inner {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
   width: 100%;
-  gap: 4rem;
+  gap: 3rem;
   z-index: 1;
 }
 
 .hero-title {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  position: relative;
+}
+
+.hero-svg {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+}
+
+.hero-title > h1 {
+  color: var(--white);
+  font-size: 5.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-block-start: 0;
   width: 50%;
 }
 
@@ -83,38 +100,19 @@ main {
   font-weight: bold;
 }
 
-.hero-title > h1 {
-  color: var(--white);
-  font-size: 5rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin-block-start: 0;
-}
-
-.subtitle {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex: 1 1 100%;
-}
-
 .subtitle > p {
-  display: flex;
   color: var(--yellow);
   font-weight: 500;
-  font-size: 2rem;
-  flex: 0 1 50%;
+  font-size: 1.75rem;
+  width: 40%;
 }
 
 .subtitle > .divider {
-  height: 1px;
-  width: 2rem;
-  background-color: var(--orange);
+  display: none;
 }
 
 .hero-button {
   display: flex;
-  flex: 1 1 25%;
 }
 
 .about-button {
@@ -126,17 +124,19 @@ main {
   padding: 0.75rem 1.5rem;
   background-color: var(--yellow);
   border-radius: 32px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, background-color 0.3s ease;
 }
 
 .about-button:hover {
-  background: var(--yellow-hover);
+  background-color: var(--yellow-hover);
 }
 
 .skills-section {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 3rem 0;
+  padding: 2.5rem 0;
   overflow: hidden;
   background-color: var(--white);
 }
@@ -147,7 +147,7 @@ main {
 }
 
 .marquee {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 500;
   color: var(--black);
   white-space: nowrap;
@@ -162,10 +162,10 @@ main {
 .philosophy-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   overflow: hidden;
   background-color: var(--orange);
-  border-radius: 0 3rem 0 0;
+  border-radius: 2.5rem 2.5rem 0 0;
 }
 
 .philosophy-content {
@@ -176,8 +176,9 @@ main {
 
 .philosophy-header {
   display: flex;
+  flex-direction: row-reverse;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
   gap: 2rem;
   padding: 2rem 4rem;
@@ -187,16 +188,13 @@ main {
 
 .philosophy-header > h1 {
   color: var(--white);
-  font-weight: 900;
-  font-size: 6rem;
-  letter-spacing: 0.25rem;
-  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3rem;
 }
 
 .philosophy-tabs {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .philosophy-tab {
@@ -211,12 +209,12 @@ main {
 }
 
 .philosophy-tab:hover {
-  color: var(--yellow-hover);
+  color: var(--shadow);
 }
 
 .philosophy-tab.active {
   text-decoration: underline;
-  color: var(--yellow);
+  color: var(--white);
 }
 
 .philosophy-inner {
@@ -333,25 +331,39 @@ main {
   display: flex;
   padding: 4rem 3rem;
   gap: 2rem;
+  position: relative;
 }
 
 .how-title {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   flex: 0 1 40%;
+}
+
+.title-group {
   position: relative;
 }
-.how-title > h1 {
+
+.how-title.sticky > .title-group {
+  position: sticky;
+  top: 4rem;
+}
+
+.how-title.stick-bottom > .title-group {
+  position: absolute;
+  bottom: 4rem;
+}
+
+.title-group > h1 {
   font-size: 4rem;
   z-index: 1;
 }
-.how-title > h2 {
+.title-group> h2 {
   font-size: 3rem;
   color: var(--orange);
   z-index: 1;
 }
-.how-title > h3 {
+.title-group > h3 {
   position: absolute;
   font-size: 10rem;
   color: var(--yellow-hover);
@@ -366,7 +378,7 @@ main {
   gap: 4rem;
   background-color: var(--black);
   border-radius: 3rem;
-  padding: 4rem;
+  padding: 4rem 2rem;
   color: var(--white);
 }
 
@@ -375,6 +387,7 @@ main {
   align-items: center;
   width: 100%;
   color: var(--white);
+  gap: 1rem;
 }
 
 .how-col {
@@ -405,14 +418,13 @@ main {
 }
 
 .how-col.center {
+  display: flex;
   justify-content: center;
+  padding: 0;
 }
 .how-col.end {
+  display: flex;
   justify-content: flex-end;
-}
-
-.row-icon {
-
 }
 
 .about-section {
@@ -434,10 +446,8 @@ main {
 
 .about-section-header > h1 {
   color: var(--black);
-  font-weight: 900;
-  font-size: 6rem;
-  letter-spacing: 0.188rem;
-  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 5rem;
 }
 
 .about-tabs {
@@ -459,12 +469,12 @@ main {
 }
 
 .about-tab:hover {
-  color: var(--orange);
+  color: var(--white);
 }
 
 .about-tab.active {
   text-decoration: underline;
-  color: var(--orange);
+  color: var(--black);
 }
 
 .about-tab-content {
@@ -565,7 +575,6 @@ main {
   .how-section {
     flex-direction: column;
     padding: 2rem 1rem;
-    gap: 3rem;
   }
   .how-col {
     width: 100%;
@@ -579,7 +588,8 @@ main {
     align-items: center;
   }
   .how-title > h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    text-transform: uppercase;
     z-index: 1;
   }
   .how-title > h2 {
@@ -607,18 +617,31 @@ main {
 
 @media screen and (max-width: 768px) {
   .hero-section {
-    padding: 2rem 2rem;
+    height: 100%;
+    padding: 3rem 2rem;
     border-radius: 0 0 1.5rem 1.5rem;
+    gap: 3rem;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+  }
+
+  .hero-inner {
+    gap: 3rem;
   }
   .hero-title {
     flex-direction: column;
     width: 100%;
+    position: static;
   }
   .hero-name > h1 {
     font-size: 2rem;
   }
   .hero-title > h1 {
     font-size: 3rem;
+  }
+  .hero-svg {
+    display: none;
   }
   .subtitle {
     flex-direction: column;
@@ -630,9 +653,11 @@ main {
     font-weight: 500;
     font-size: 1.5rem;
     flex: unset;
+    width: 100%;
   }
   .subtitle > .divider {
-    height: 10rem;
+    display: block;
+    height: 5rem;
     width: 1px;
     background-color: var(--orange);
   }
@@ -651,7 +676,7 @@ main {
   }
 
   .philosophy-section {
-    border-radius: 0 1.5rem 0 0;
+    border-radius: 1.5rem 1.5rem 0 0;
   }
   .philosophy-header {
     flex-direction: column;
@@ -660,9 +685,8 @@ main {
     padding: 2rem;
   }
   .philosophy-header > h1 {
-    font-weight: 500;
-    font-size: 2.5rem;
-    letter-spacing: 0px;
+    font-weight: 700;
+    font-size: 2.75rem;
     text-align: center;
   }
   .philosophy-tab {
@@ -691,48 +715,6 @@ main {
     display: none;
   }
 
-  .how-section {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 3rem;
-  }
-  .how-col {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .how-col.center {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .how-title {
-    align-items: center;
-  }
-  .how-title > h1 {
-    font-size: 3rem;
-    z-index: 1;
-  }
-  .how-title > h2 {
-    font-size: 2rem;
-    color: var(--orange);
-    text-transform: uppercase;
-    z-index: 1;
-  }
-  .how-title > h3 {
-    display: none;
-  }
-  .how-row {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    color: var(--white);
-  }
-  .how-content {
-    flex-direction: column;
-    flex: 0 0 60%;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
   .about-section {
     flex-direction: column;
     gap: 2rem;
@@ -751,7 +733,6 @@ main {
     color: var(--black);
     font-size: 2.75rem;
     font-weight: 700;
-    text-transform: unset;
   }
   .about-tab {
     font-size: 1.25rem;
