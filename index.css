@@ -1,6 +1,6 @@
 :root {
   --black:  rgb(11, 20, 24, 1);
-  --yellow: rgb(204, 187, 0, 1);
+  --yellow: #ccbb00;
   --yellow-hover: rgb(204, 187, 0, 0.75);
   --orange: #e62e00;
   --pink-bg: #d44d4d;
@@ -187,9 +187,10 @@ main {
 
 .philosophy-header > h1 {
   color: var(--white);
-  font-weight: 700;
-  font-size: 4rem;
+  font-weight: 900;
+  font-size: 6rem;
   letter-spacing: 0.25rem;
+  text-transform: uppercase;
 }
 
 .philosophy-tabs {
@@ -202,7 +203,7 @@ main {
   appearance: none;
   border: none;
   background-color: unset;
-  color: var(--black);
+  color: var(--white);
   font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.3s ease, color 0.3s ease;
@@ -210,12 +211,12 @@ main {
 }
 
 .philosophy-tab:hover {
-  color: var(--white);
+  color: var(--yellow-hover);
 }
 
 .philosophy-tab.active {
   text-decoration: underline;
-  color: var(--white);
+  color: var(--yellow);
 }
 
 .philosophy-inner {
@@ -411,10 +412,7 @@ main {
 }
 
 .row-icon {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background-color: grey;
+
 }
 
 .about-section {
@@ -556,6 +554,14 @@ main {
 }
 
 @media screen and (max-width: 1145px) {
+  #philosophy-svg-desktop.slide-in {
+    animation: none;
+  }
+  
+  #philosophy-svg-desktop.slide-out {
+    animation: none;
+  }
+
   .how-section {
     flex-direction: column;
     padding: 2rem 1rem;
