@@ -404,7 +404,7 @@ main {
 
 .how-col p {
   font-weight: 500;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .how-col.col-sm {
@@ -418,14 +418,13 @@ main {
 }
 
 .how-col.center {
-  display: flex;
   justify-content: center;
   padding: 0;
 }
 .how-col.end {
-  display: flex;
   justify-content: flex-end;
 }
+
 
 .about-section {
   display: flex;
