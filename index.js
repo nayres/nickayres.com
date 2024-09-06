@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let philosophySvg = document.querySelector('#philosophy-svg-desktop');
   let howSection = document.querySelector('.how-title');
   let howRowIcon = document.querySelectorAll('.row-icon');
+  let aboutSection = document.querySelector('.about-section');
+  let ctaSection = document.querySelector('.contact-cta-section');
 
   let heroScrollObserverOptions = { threshold: 0.1 };
   function heroScrollCallback(entries, _) {
@@ -68,6 +70,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   let howTitleScrollObserver = new IntersectionObserver(howTitleScrollCallback, howTitleObserverOptions);
   howTitleScrollObserver.observe(howSection)
+
+  let aboutSectionOptions = {
+    threshold: 0.1,
+    rootMargin: '175px'
+  };
+
+  function aboutSectionObserverCallback(entries, _) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        ctaSection.classList.add('in-view');
+      } else {
+        ctaSection.classList.remove('in-view');
+      }
+    });
+  }
+
+  let aboutSectionObserver = new IntersectionObserver(aboutSectionObserverCallback, aboutSectionOptions);
+  aboutSectionObserver.observe(aboutSection)
 
   function handleScroll(section) {
     return () => {
