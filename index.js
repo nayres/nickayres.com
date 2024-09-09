@@ -374,10 +374,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
   
-  // Register event listener
   mediaQuery.addEventListener("change", handleTabletChange)
   
-  // Initial check
   handleTabletChange(mediaQuery)
   const skillScrollObserver = new IntersectionObserver((entries, _) => {
     entries.forEach(entry => {
