@@ -1,29 +1,51 @@
 let skillsSvgs = {
   2: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="142" height="18" fill="none" viewBox="0 0 142 18">
+    <svg class="rank-svg-desktop" xmlns="http://www.w3.org/2000/svg" width="142" height="18" fill="none" viewBox="0 0 142 18">
       <path fill="#302B2B" d="M124 6h15a3 3 0 1 1 0 6h-15V6ZM93 6h18v6H93zM62 6h18v6H62z"/>
       <circle cx="40" cy="9" r="9" fill="#E62E00"/>
       <path fill="#E62E00" d="M0 9a3 3 0 0 1 3-3h15v6H3a3 3 0 0 1-3-3Z"/>
     </svg>
+    <svg class="rank-svg-mobile" xmlns="http://www.w3.org/2000/svg" width="76" height="12" fill="none" viewBox="0 0 76 12">
+      <path fill="#302B2B" d="M64 3h9a3 3 0 1 1 0 6h-9V3ZM48 3h12v6H48zM32 3h12v6H32V3Z"/>
+      <circle cx="22" cy="6" r="6" fill="#E62E00"/>
+      <path fill="#E62E00" d="M0 6a3 3 0 0 1 3-3h9v6H3a3 3 0 0 1-3-3Z"/>
+    </svg>
   `,
   3: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="142" height="18" fill="none" viewBox="0 0 142 18">
+    <svg class="rank-svg-desktop" xmlns="http://www.w3.org/2000/svg" width="142" height="18" fill="none" viewBox="0 0 142 18">
       <path fill="#E62E00" d="M0 9a3 3 0 0 1 3-3h15v6H3a3 3 0 0 1-3-3ZM31 6h18v6H31V6Z"/>
       <circle cx="71" cy="9" r="9" fill="#E62E00"/>
       <path fill="#302B2B" d="M124 6h15a3 3 0 1 1 0 6h-15V6ZM93 6h18v6H93z"/>
     </svg>
+    <svg class="rank-svg-mobile" xmlns="http://www.w3.org/2000/svg" width="76" height="12" fill="none" viewBox="0 0 76 12">
+      <path fill="#302B2B" d="M64 3h9a3 3 0 1 1 0 6h-9V3ZM48 3h12v6H48z"/>
+      <path fill="#E62E00" d="M16 3h12v6H16V3Z"/>
+      <circle cx="38" cy="6" r="6" fill="#E62E00"/>
+      <path fill="#E62E00" d="M0 6a3 3 0 0 1 3-3h9v6H3a3 3 0 0 1-3-3Z"/>
+    </svg>
   `,
   4: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="142" height="18" fill="none" viewBox="0 0 142 18">
+    <svg class="rank-svg-desktop" xmlns="http://www.w3.org/2000/svg" width="142" height="18" fill="none" viewBox="0 0 142 18">
       <path fill="#302B2B" d="M124 6h15a3 3 0 1 1 0 6h-15V6Z"/>
       <circle cx="102" cy="9" r="9" fill="#E62E00"/>
       <path fill="#E62E00" d="M62 6h18v6H62zM31 6h18v6H31zM0 9a3 3 0 0 1 3-3h15v6H3a3 3 0 0 1-3-3Z"/>
     </svg>
+    <svg class="rank-svg-mobile" xmlns="http://www.w3.org/2000/svg" width="76" height="12" fill="none" viewBox="0 0 76 12">
+      <path fill="#302B2B" d="M64 3h9a3 3 0 1 1 0 6h-9V3Z"/>
+      <path fill="#E62E00" d="M16 3h12v6H16zM32 3h12v6H32V3Z"/>
+      <circle cx="54" cy="6" r="6" fill="#E62E00"/>
+      <path fill="#E62E00" d="M0 6a3 3 0 0 1 3-3h9v6H3a3 3 0 0 1-3-3Z"/>
+    </svg>
   `,
   5: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="142" height="18" fill="none" viewBox="0 0 142 18">
+    <svg class="rank-svg-desktop" xmlns="http://www.w3.org/2000/svg" width="142" height="18" fill="none" viewBox="0 0 142 18">
       <path fill="#E62E00" d="M0 9a3 3 0 0 1 3-3h15v6H3a3 3 0 0 1-3-3ZM31 6h18v6H31zM62 6h18v6H62zM93 6h18v6H93z"/>
       <circle cx="133" cy="9" r="9" fill="#E62E00"/>
+    </svg>
+    <svg class="rank-svg-mobile" xmlns="http://www.w3.org/2000/svg" width="76" height="12" fill="none" viewBox="0 0 76 12">
+      <path fill="#E62E00" d="M48 3h12v6H48zM32 3h12v6H32V3ZM16 3h12v6H16V3Z"/>
+      <circle cx="70" cy="6" r="6" fill="#E62E00"/>
+      <path fill="#E62E00" d="M0 6a3 3 0 0 1 3-3h9v6H3a3 3 0 0 1-3-3Z"/>
     </svg>
   `,
 };
@@ -146,8 +168,8 @@ let skills = [
     label: 'Infra Tools',
     subCatergories: [
       {
-        label: 'Amazon API Gateway',
-        rank: 5,
+        label: 'Amazon SQS',
+        rank: 4,
       },
       {
         label: 'Kafka',
@@ -189,11 +211,11 @@ let skills = [
     subCatergories: [
       {
         label: 'Splunk',
-        rank: 4,
+        rank: 5,
       },
       {
         label: 'DataDog',
-        rank: 4,
+        rank: 5,
       },
       {
         label: 'Google Analytics',
@@ -250,11 +272,15 @@ let skills = [
         rank: 2,
       },
       {
-        label: 'REST',
+        label: 'RESTful Design',
         rank: 5,
       },
       {
-        label: 'HTTP',
+        label: 'Scale/Avail',
+        rank: 5,
+      },
+      {
+        label: 'HTTP/HTTPS',
         rank: 5,
       },
     ]
@@ -262,7 +288,6 @@ let skills = [
 ];
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  let heroSvg = document.querySelector('.hero-svg');
   let aboutTabs = document.querySelectorAll('.about-tab');
   let aboutTabContent = document.querySelectorAll('.about-tab-content');
   let philoTabs = document.querySelectorAll('.philosophy-tab');
@@ -290,7 +315,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // 'skill-category-label'
       let categoryLabel = document.createElement('div');
       categoryLabel.classList.add('skill-category-label');
-
       let categoryLabelHeading = document.createElement('h1');
       categoryLabelHeading.textContent = skill.label;
 
@@ -331,23 +355,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     flick = new Flickity(skillRankSection, {
       cellAlign: 'center',
+      setGallerySize: false,
       prevNextButtons: false,
       wrapAround: true,
       pageDots: false,
-      selectedAttraction: 0.2,
       friction: 0.8
     });
   }
 
   renderSkillCategories()
 
+  const mediaQuery = window.matchMedia('(max-width: 768px)')
+
+  let isSmallReso = false;
+  function handleTabletChange(e) {
+    if (e.matches) {
+      isSmallReso = true;
+    }
+  }
+  
+  mediaQuery.addEventListener("change", handleTabletChange)
+  
+  handleTabletChange(mediaQuery)
   const skillScrollObserver = new IntersectionObserver((entries, _) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         flick.isFreeScrolling = true;
         flick.startAnimation();
-    
-        flick.velocity += 1000 * -0.1;
+        
+        if (isSmallReso) {
+          flick.velocity += 750 * -0.1;
+        } else {
+          flick.velocity += 1000 * -0.1;
+        }
         flick.x += flick.velocity;
         flick.velocity *= 0.3;
     
@@ -358,29 +398,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }, { threshold: 1 });
   skillScrollObserver.observe(flickitySlider);
-
-  let heroScrollObserverOptions = { threshold: 0.1 };
-  function heroScrollCallback(entries, _) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        console.log('r')
-        heroSvg.classList.remove('slide-out');
-        heroSvg.classList.add('slide-in');
-      } else {
-        heroSvg.classList.add('slide-out');
-        heroSvg.classList.remove('slide-in');
-      }
-    });
-  }
-
-  let heroScrollObserver = new IntersectionObserver(heroScrollCallback, heroScrollObserverOptions);
-  heroScrollObserver.observe(heroSvg);
-
-  window.addEventListener('scroll', () => {
-    let scrollPosition = window.scrollY;
-    let rotationAngle = scrollPosition * 0.1;
-    heroSvg.style.transform = `rotate(${rotationAngle}deg)`;
-  });
 
   let valuesSlideObserverOptions = { threshold: 0.1 };
   function valuesSlideCallback(entries, _) {
