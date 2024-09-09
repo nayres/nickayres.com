@@ -274,6 +274,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let skillsRankSection = document.querySelector('.skills-rank-section');
   let ctaSection = document.querySelector('.contact-cta-section');
   let skillRankSection = document.querySelector('.skills-rank-pan');
+  let flickitySlider = document.querySelector('.skills-rank-pan');
+  let flick;
 
   function renderSkillCategories() {
     skills.forEach(skill => {
@@ -327,7 +329,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       categoryBox.appendChild(skillCategoryInner)
     })
 
-    new Flickity(skillRankSection, {
+    flick = new Flickity(skillRankSection, {
       cellAlign: 'center',
       prevNextButtons: false,
       wrapAround: true,
@@ -335,10 +337,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
       selectedAttraction: 0.2,
       friction: 0.8
     });
-
   }
 
   renderSkillCategories()
+
+  const skillScrollObserver = new IntersectionObserver((entries, _) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        flick.isFreeScrolling = true;
+        flick.startAnimation();
+    
+        flick.velocity += 1000 * -0.1;
+        flick.x += flick.velocity;
+        flick.velocity *= 0.3;
+    
+
+        flick.positionSlider();
+        skillScrollObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 1 });
+  skillScrollObserver.observe(flickitySlider);
 
   let heroScrollObserverOptions = { threshold: 0.1 };
   function heroScrollCallback(entries, _) {
