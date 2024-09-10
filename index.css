@@ -85,6 +85,7 @@ main {
   padding: 4rem;
   gap: 1rem;
   background-color: var(--black);
+  overflow: hidden;
   border-radius: 0 0 2.5rem 2.5rem;
 }
 
@@ -106,10 +107,9 @@ main {
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  right: 0;
-}
-#hero-svg-mobile {
-  display: none;
+  right: 10%;
+  transform: scale(2.75);
+  filter: brightness(75%);
 }
 
 .hero-title > h1 {
@@ -150,7 +150,7 @@ main {
 @media screen and (max-width: 600px) {
   .hero-section {
     gap: 4rem;
-    height: 494px;
+    height: 642px;
     padding: 3rem 2rem;
     border-radius: 0 0 1.5rem 1.5rem;
     overflow: hidden;
@@ -385,19 +385,6 @@ main {
   z-index: 0;
 }
 
-#philosophy-svg-mobile {
-  display: none;
-}
-
-#philosophy-svg-desktop {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #philosophy-svg-desktop.slide-in {
   animation: slideIn 1s ease-out forwards;
 }
@@ -447,7 +434,7 @@ main {
   height: 3rem;
   border-radius: 2.5rem;
   background-color: var(--black);
-  color: var(--yellow);
+  color: var(--white);
   font-size: 2rem;
   font-weight: bold;
   z-index: 1;
@@ -496,14 +483,9 @@ main {
 
 @media screen and (max-width: 500px) {
   .svg-box {
-    right: 6%;
-    left: unset;
     top: unset;
     bottom: -77px;
-  }
-
-  #philosophy-svg-desktop {
-    transform: scale(4);
+    left: -38rem;
   }
 
   .philosophy-section {
@@ -554,21 +536,17 @@ main {
 
 @media screen and (min-width: 500px) and (max-width: 1024px) {
   .svg-box {
-    left: -21%
-  }
-
-  #philosophy-svg-desktop {
-    transform: scale(1.75);
+    top: unset;
+    bottom: -77px;
+    left: -25rem;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .svg-box {
-    left: -18%
-  }
-
-  #philosophy-svg-desktop {
-    transform: scale(1.5);
+    top: unset;
+    bottom: -77px;
+    left: -15rem;
   }
 }
 

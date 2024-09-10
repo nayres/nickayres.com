@@ -393,7 +393,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
 
         flick.positionSlider();
-        skillScrollObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 1 });
