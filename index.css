@@ -85,6 +85,7 @@ main {
   padding: 4rem;
   gap: 1rem;
   background-color: var(--black);
+  overflow: hidden;
   border-radius: 0 0 2.5rem 2.5rem;
 }
 
@@ -106,10 +107,9 @@ main {
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  right: 0;
-}
-#hero-svg-mobile {
-  display: none;
+  right: 10%;
+  transform: scale(2.75);
+  filter: brightness(75%);
 }
 
 .hero-title > h1 {
@@ -434,7 +434,7 @@ main {
   height: 3rem;
   border-radius: 2.5rem;
   background-color: var(--black);
-  color: var(--yellow);
+  color: var(--white);
   font-size: 2rem;
   font-weight: bold;
   z-index: 1;
