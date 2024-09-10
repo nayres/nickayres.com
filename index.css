@@ -83,7 +83,7 @@ main {
   display: flex;
   flex-direction: column;
   padding: 4rem;
-  gap: 4rem;
+  gap: 1rem;
   background-color: var(--black);
   border-radius: 0 0 2.5rem 2.5rem;
 }
@@ -92,7 +92,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 4rem;
+  gap: 2rem;
   z-index: 1;
 }
 
@@ -149,12 +149,16 @@ main {
 
 @media screen and (max-width: 600px) {
   .hero-section {
-    height: 100%;
+    gap: 4rem;
+    height: 494px;
     padding: 3rem 2rem;
     border-radius: 0 0 1.5rem 1.5rem;
     overflow: hidden;
-    height: 100vh;
     position: relative;
+  }
+
+  .hero-inner {
+    gap: 4rem;
   }
 
   .hero-title {
@@ -377,7 +381,6 @@ main {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 1rem;
   left: -9.5rem;
   z-index: 0;
 }
@@ -393,33 +396,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-@media screen and (max-width: 500px) {
-  .svg-box {
-    left: -34%
-  }
-
-  #philosophy-svg-desktop {
-    transform: scale(2.5);
-  }
-}
-@media screen and (min-width: 500px) and (max-width: 1024px) {
-  .svg-box {
-    left: -21%
-  }
-
-  #philosophy-svg-desktop {
-    transform: scale(1.75);
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1200px) {
-  .svg-box {
-    left: -18%
-  }
-
-  #philosophy-svg-desktop {
-    transform: scale(1.5);
-  }
 }
 
 #philosophy-svg-desktop.slide-in {
@@ -444,7 +420,7 @@ main {
   font-weight: 400;
   color: var(--black);
   opacity: 1;
-  min-height: 100vh;
+  height: 100vh;
   padding: 2rem;
   width: 100%;
   z-index: 1;
@@ -508,7 +484,28 @@ main {
   font-weight: 500;
 }
 
-@media screen and (max-width: 728px) {
+@media screen and (max-width: 1145px) {
+  #philosophy-svg-desktop.slide-in {
+    animation: none;
+  }
+  
+  #philosophy-svg-desktop.slide-out {
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .svg-box {
+    right: 6%;
+    left: unset;
+    top: unset;
+    bottom: -77px;
+  }
+
+  #philosophy-svg-desktop {
+    transform: scale(4);
+  }
+
   .philosophy-section {
     border-radius: 1.5rem 1.5rem 0 0;
   }
@@ -525,6 +522,10 @@ main {
   }
   .philosophy-tab {
     font-size: 1.25rem;
+  }
+
+  .philosophy-tab-content.active {
+    height: 600px;
   }
 
   .bullet-group {
@@ -548,6 +549,26 @@ main {
   }
   .bullet-content > p {
     display: none;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .svg-box {
+    left: -21%
+  }
+
+  #philosophy-svg-desktop {
+    transform: scale(1.75);
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .svg-box {
+    left: -18%
+  }
+
+  #philosophy-svg-desktop {
+    transform: scale(1.5);
   }
 }
 
@@ -642,7 +663,8 @@ main {
 @media screen and (max-width: 728px) {
   .how-section {
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 1rem;
+    gap: 1rem;
   }
   .how-title.sticky > .title-group {
     position: static;
@@ -911,7 +933,7 @@ main {
   user-select: none;
   width: 40%;
   height: 100%;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
 }
 
 .skills-rank-content {
@@ -925,7 +947,6 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-right: 1rem;
   width: 100%;
 }
 
@@ -967,6 +988,10 @@ main {
 }
 
 @media screen and (max-width: 728px) {
+  .skills-rank-section {
+    height: 500px;
+    min-height: unset;
+  }
   .skills-rank-header {
     flex-direction: column;
     align-items: center;
@@ -976,7 +1001,7 @@ main {
     border-bottom: 1px solid var(--white);
   }
   .skills-rank-box {
-    padding: 2rem 0;
+    padding: 2rem;
     width: 100%;
   }
   .skill-category-box {
@@ -1009,6 +1034,10 @@ main {
   }
 }
 @media screen and (min-width: 500px) and (max-width: 768px) {
+  .skills-rank-section {
+    /* height: 500px; */
+    min-height: unset;
+  }
   .skills-rank-header {
     flex-direction: column;
     align-items: center;
@@ -1018,7 +1047,7 @@ main {
     border-bottom: 1px solid var(--white);
   }
   .skills-rank-box {
-    padding: 2rem 0;
+    padding: 2rem;
     width: 50%;
   }
   .skill-category-box {
@@ -1033,7 +1062,7 @@ main {
     gap: 1rem;
     padding: 1.5rem;
     border: 2px solid var(--white);
-    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     border-radius: 1.5rem;
     width: 100%;
     height: 100%;
@@ -1221,62 +1250,6 @@ main {
   font-weight: 400;
 }
 
-@media screen and (max-width: 728px) {
-
-}
-@media screen and (min-width: 728px) and (max-width: 1024px) {
-
-}
-@media screen and (min-width: 1024px) and (max-width: 1200px) {
-
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(-20%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-20%);
-  }
-}
-
-@keyframes tab-content-slide {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 1145px) {
-  #philosophy-svg-desktop.slide-in {
-    animation: none;
-  }
-  
-  #philosophy-svg-desktop.slide-out {
-    animation: none;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .skills-section {
     padding: 2rem;
@@ -1328,3 +1301,40 @@ main {
     font-size: 1.25rem;
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-20%);
+  }
+}
+
+@keyframes tab-content-slide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
