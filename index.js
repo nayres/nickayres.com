@@ -495,6 +495,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         return false;
       }
 
+      gtag('event', 'button_click', {
+        'event_category': 'about-tab-click',
+        'event_label': 'About Tab Click',
+        'value': 1
+      });
+
       aboutTabs.forEach(t => t.classList.remove('active'));
       aboutTabContent.forEach(tc => {
         tc.classList.remove('active')
@@ -510,6 +516,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
       if (tab.classList.contains('active')) {
         return false;
       }
+
+      gtag('event', 'button_click', {
+        'event_category': 'philo-tab-click',
+        'event_label': 'Philosophy Tab Click',
+        'value': 1
+      });
 
       philoTabs.forEach(t => t.classList.remove('active'));
       philoTabContent.forEach(tc => {
