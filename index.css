@@ -35,7 +35,7 @@ p {
 main {
   background-color: #e2ddd3;
   color: var(--black);
-  max-width: 2000;
+  max-width: 2000px;
   margin: 0 auto;
   min-height: 50vh;
 }
@@ -998,8 +998,16 @@ main {
   flex-direction: column;
   overflow-x: hidden;
   background-color: var(--black);
-  height: 100vh;
-  min-height: 100vh;
+
+}
+
+.skills-rank-pan > .flickity-viewport {
+  height: 450px;
+}
+
+.skills-rank-pan > .flickity-viewport > .flickity-slider {
+  display: flex;
+  padding: 2rem;
 }
 
 .skills-rank-header {
@@ -1030,8 +1038,7 @@ main {
   display: flex;
   user-select: none;
   width: 40%;
-  height: 100%;
-  padding: 4rem 2rem;
+  padding: 0 2rem;
 }
 
 .skills-rank-content {
@@ -1086,10 +1093,6 @@ main {
 }
 
 @media screen and (max-width: 728px) {
-  .skills-rank-section {
-    height: 500px;
-    min-height: unset;
-  }
   .skills-rank-header {
     flex-direction: column;
     align-items: center;
@@ -1098,8 +1101,16 @@ main {
     padding: 2rem;
     border-bottom: 1px solid var(--white);
   }
-  .skills-rank-box {
+  .skills-rank-pan > .flickity-viewport {
+    height: 300px;
+  }
+  
+  .skills-rank-pan > .flickity-viewport > .flickity-slider {
+    display: flex;
     padding: 2rem;
+  }
+  .skills-rank-box {
+    padding: 0 2rem;
     width: 100%;
   }
   .skill-category-box {
@@ -1134,7 +1145,7 @@ main {
 @media screen and (min-width: 500px) and (max-width: 768px) {
   .skills-rank-section {
     /* height: 500px; */
-    min-height: unset;
+    /* min-height: unset; */
   }
   .skills-rank-header {
     flex-direction: column;
@@ -1144,8 +1155,24 @@ main {
     padding: 2rem;
     border-bottom: 1px solid var(--white);
   }
-  .skills-rank-box {
+  .skills-rank-pan > .flickity-viewport {
+    height: 450px;
+  }
+  
+  .skills-rank-pan > .flickity-viewport > .flickity-slider {
+    display: flex;
     padding: 2rem;
+  }
+  .skills-rank-pan > .flickity-viewport {
+    height: 300px;
+  }
+  
+  .skills-rank-pan > .flickity-viewport > .flickity-slider {
+    display: flex;
+    padding: 2rem;
+  }
+  .skills-rank-box {
+    padding: 0 2rem;
     width: 50%;
   }
   .skill-category-box {
