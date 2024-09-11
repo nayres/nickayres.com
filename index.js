@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     flick = new Flickity(skillRankSection, {
       cellAlign: 'center',
-      setGallerySize: true,
+      setGallerySize: false,
       prevNextButtons: false,
       wrapAround: true,
       pageDots: false,
