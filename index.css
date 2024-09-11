@@ -1,5 +1,6 @@
 :root {
   --black:  rgb(11, 20, 24, 1);
+  --light-black: #302B2B;
   --yellow: #ccbb00;
   --yellow-hover: rgb(204, 187, 0, 0.75);
   --orange: #e62e00;
@@ -364,11 +365,11 @@ main {
 .philosophy-header {
   display: flex;
   align-items: center;
-  position: absolute;
+  background-color: var(--orange);
   width: 100%;
   gap: 2rem;
   padding: 2rem 4rem;
-  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--white);
   z-index: 1;
 }
 
@@ -431,10 +432,8 @@ main {
 }
 
 .svg-box {
-  display: flex;
-  align-items: center;
   position: absolute;
-  bottom: 0;
+  bottom: -3px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
@@ -458,7 +457,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   font-weight: 400;
   color: var(--black);
   opacity: 1;
@@ -466,16 +465,30 @@ main {
   width: 100%;
 }
 
+.tab-content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 14%;
+  padding: 4rem;
+}
+
 .philo-bullet {
   display: flex;
+  justify-content: flex-end;
   flex: 1;
-  justify-content: center;
   opacity: 1;
+  width: 52%;
 }
 
 .bullet-group {
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
   position: relative;
 }
 
@@ -494,16 +507,14 @@ main {
 }
 
 .bullet-content {
-  position: absolute;
-  left: 2rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
   background-color: var(--yellow);
   border-radius: 1.5rem;
-  max-width: 500px;
-  width: 325px;
   gap: 0.25rem;
   padding: 1rem 1.75rem;
+  width: 100%;
   animation: tab-content-slide 400ms ease-in-out;
 }
 
@@ -543,6 +554,8 @@ main {
     align-items: center;
     gap: 1rem;
     padding: 2rem;
+    width: 100%;
+    border-bottom: 1px solid var(--white);
   }
   .philosophy-header > h1 {
     font-weight: 700;
@@ -552,13 +565,21 @@ main {
   .philosophy-tab {
     font-size: 1.25rem;
   }
-  .philosophy-tab-content.active {
-    padding: 4.5rem 2rem;
-    padding-bottom: 0;
+  .tab-content-box {
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: unset;
   }
-
+  .philo-bullet {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    opacity: 1;
+    width: 100%;
+  }
   .bullet-group {
     justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
   .bullet-content {
@@ -579,27 +600,44 @@ main {
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
+  .svg-box {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) scale(1.1);
+  }
   .philosophy-header {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding: 2rem;
+    width: 100%;
+    border-bottom: 1px solid var(--white);
   }
   .philosophy-header > h1 {
     font-weight: 700;
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     text-align: center;
   }
   .philosophy-tab {
     font-size: 1.25rem;
   }
-  .philosophy-tab-content.active {
-    padding: 4.5rem 2rem;
-    padding-bottom: 0;
+  .tab-content-box {
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 8%;
   }
   .bullet-group {
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+  }
+  .philo-bullet {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    opacity: 1;
+    width: 75%;
   }
   .bullet-content {
     position: relative;
@@ -617,7 +655,32 @@ main {
     text-transform: uppercase;
   }
 }
-
+@media (min-width: 1367px) and (max-width: 1580px) {
+  .svg-box {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+@media (min-width: 1581px) and (max-width: 1920px) {
+  .svg-box {
+    position: absolute;
+    bottom: -18%;
+    left: 50%;
+    transform: translateX(-50%) scale(1.5);
+  }
+  .bullet-content > h1 {
+    color: var(--black);
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  .bullet-content > p {
+    color: var(--black);
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
 @media (min-width: 1921px) {
   .philosophy-header {
     flex-direction: row;
@@ -632,30 +695,40 @@ main {
     font-size: 2.75rem;
   }
   .svg-box {
-    top: 130%;
+    bottom: -25%;
     left: 54%;
-    transform: translateX(-50%) scale(3);
+    transform: translateX(-50%) scale(1.5);
   }
   .philosophy-tab-content.active {
     flex-direction: row;
   }
-  .bullet {
-    height: 8rem;
-    width: 8rem;
-    font-size: 4rem;
-    border-radius: 50%;
+  .tab-content-box {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: unset;
+  }
+  .philo-bullet {
+    align-items: flex-start;
+    opacity: 1;
   }
   .bullet-group {
     align-items: flex-start;
   }
+  .bullet {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    border-radius: 50%;
+  }
   .bullet-content {
     width: 100%;
     position: relative;
+    left: unset;
   }
   .bullet-content.right {
     width: max-content;
     position: relative;
-    left: 2rem;
     right: unset;
   }
   .bullet-content > h1 {
@@ -1007,6 +1080,7 @@ main {
 
 .skills-rank-pan > .flickity-viewport > .flickity-slider {
   display: flex;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -1038,7 +1112,7 @@ main {
   display: flex;
   user-select: none;
   width: 40%;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .skills-rank-content {
@@ -1061,7 +1135,8 @@ main {
 
 .skill-category-inner {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Creates 3 equal-width columns */
+  grid-template-rows: repeat(3, 1fr); /* Creates 3 equal-height rows */
   gap: 2.5rem;
   padding: 2rem;
   border: 2px solid var(--white);
@@ -1092,7 +1167,7 @@ main {
   display: none;
 }
 
-@media screen and (max-width: 728px) {
+@media (max-width: 426px) {
   .skills-rank-header {
     flex-direction: column;
     align-items: center;
@@ -1101,21 +1176,18 @@ main {
     padding: 2rem;
     border-bottom: 1px solid var(--white);
   }
-  .skills-rank-pan > .flickity-viewport {
-    height: 300px;
-  }
-  
+
   .skills-rank-pan > .flickity-viewport > .flickity-slider {
     display: flex;
     padding: 2rem;
   }
+  .skills-rank-pan > .flickity-viewport {
+    height: 300px;
+  }
+  
   .skills-rank-box {
     padding: 0 2rem;
     width: 100%;
-  }
-  .skill-category-box {
-    gap: 1rem;
-    margin-right: 0;
   }
   .skill-category-label > h1{
     font-size: 1rem;
@@ -1125,7 +1197,6 @@ main {
     gap: 1rem;
     padding: 1.5rem;
     border: 2px solid var(--white);
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     border-radius: 1.5rem;
     width: 100%;
     height: 100%;
@@ -1142,11 +1213,7 @@ main {
     display: none;
   }
 }
-@media screen and (min-width: 500px) and (max-width: 768px) {
-  .skills-rank-section {
-    /* height: 500px; */
-    /* min-height: unset; */
-  }
+@media (min-width: 427px) and (max-width: 440px) {
   .skills-rank-header {
     flex-direction: column;
     align-items: center;
@@ -1173,11 +1240,7 @@ main {
   }
   .skills-rank-box {
     padding: 0 2rem;
-    width: 50%;
-  }
-  .skill-category-box {
-    gap: 1rem;
-    margin-right: 0;
+    width: 100%;
   }
   .skill-category-label > h1{
     font-size: 1rem;
@@ -1187,7 +1250,6 @@ main {
     gap: 1rem;
     padding: 1.5rem;
     border: 2px solid var(--white);
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     border-radius: 1.5rem;
     width: 100%;
     height: 100%;
@@ -1204,7 +1266,7 @@ main {
     display: none;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 441px) and (max-width: 612px) {
   .skills-rank-header {
     flex-direction: column;
     align-items: center;
@@ -1214,12 +1276,8 @@ main {
     border-bottom: 1px solid var(--white);
   }
   .skills-rank-box {
-    padding: 2rem 0;
-    width: 50%;
-  }
-  .skill-category-box {
-    gap: 1rem;
-    margin-right: 1rem;
+    padding: 0 2rem;
+    width: 100%;
   }
   .skill-category-label > h1{
     font-size: 1.25rem;
@@ -1229,7 +1287,88 @@ main {
     gap: 1rem;
     padding: 1.5rem;
     border: 2px solid var(--white);
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    border-radius: 1.5rem;
+    width: 100%;
+    height: 100%;
+  }
+  .skill-label > span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+}
+@media (min-width: 613px) and (max-width: 775px) {
+  .skills-rank-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .skills-rank-pan > .flickity-viewport > .flickity-slider {
+    display: flex;
+    padding: 2rem;
+  }
+  .skills-rank-pan > .flickity-viewport {
+    height: 332px;
+  }
+  
+  .skills-rank-box {
+    padding: 0 0.5rem;
+    width: 75%;
+  }
+
+  .skill-category-label > h1{
+    font-size: 1.25rem;
+  }
+  .skill-category-inner {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 2px solid var(--white);
+    border-radius: 1.5rem;
+    width: 100%;
+    height: 100%;
+  }
+  .skill-label > span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+}
+@media (min-width: 776px) and (max-width: 1279px) {
+  .skills-rank-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .skills-rank-pan > .flickity-viewport > .flickity-slider {
+    display: flex;
+    padding: 2rem;
+  }
+  .skills-rank-pan > .flickity-viewport {
+    height: 332px;
+  }
+  
+  .skills-rank-box {
+    padding: 0 1rem;
+    width: 50%;
+  }
+
+  .skill-category-label > h1{
+    font-size: 1.25rem;
+  }
+  .skill-category-inner {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 2px solid var(--white);
     border-radius: 1.5rem;
     width: 100%;
     height: 100%;
