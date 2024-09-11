@@ -162,6 +162,10 @@ main {
     gap: 4rem;
     height: unset;
   }
+  .hero-name {
+    position: absolute;
+    top: 2rem;
+  }
   .hero-title {
     flex-direction: column;
     width: 100%;
