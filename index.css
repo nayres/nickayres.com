@@ -86,7 +86,6 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 4rem 4rem 6rem 4rem;
   background-color: var(--black);
   overflow: hidden;
@@ -109,13 +108,12 @@ main {
 }
 
 .hero-svg {
-  display: flex;
-  justify-content: flex-end;
   position: absolute;
   right: 10%;
   transform: scale(2.75);
   filter: brightness(50%);
   z-index: 0;
+  overflow: hidden;
 }
 
 .hero-title > h1 {
@@ -154,17 +152,12 @@ main {
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 2rem;
+    padding: 2rem 2rem 6rem 2rem;
     border-radius: 0 0 1.5rem 1.5rem;
-    height: 100vh;
   }
   .hero-inner {
     gap: 4rem;
     height: unset;
-  }
-  .hero-name {
-    position: absolute;
-    top: 2rem;
   }
   .hero-title {
     flex-direction: column;
@@ -203,11 +196,6 @@ main {
     width: 100%;
     position: static;
   }
-  .hero-svg {
-    right: -6%;
-    transform: scale(2.5);
-    z-index: 0;
-  }
   .hero-title > h1 {
     font-size: 4rem;
   }
@@ -233,10 +221,6 @@ main {
     flex-direction: column;
     width: 100%;
     position: static;
-  }
-  .hero-svg {
-    right: -5%;
-    transform: scale(2.5);
   }
   .hero-title > h1 {
     font-size: 5rem;
@@ -265,10 +249,6 @@ main {
     width: 100%;
     position: static;
   }
-  .hero-svg {
-    right: -5%;
-    transform: scale(2.5);
-  }
   .hero-name > h1 {
     font-size: 3rem;
   }
@@ -286,8 +266,6 @@ main {
 @media (min-width: 1025px) and (max-width: 1279px) {
   .hero-section {
     border-radius: 0 0 1.5rem 1.5rem;
-    overflow: hidden;
-    position: relative;
   }
   .hero-title {
     flex-direction: column;
@@ -301,10 +279,6 @@ main {
   }
   .hero-title > h1 {
     font-size: 5rem;
-  }
-  .hero-svg {
-    right: -5%;
-    transform: scale(2.5);
   }
   .subtitle {
     width: 50%;
