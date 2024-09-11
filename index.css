@@ -37,6 +37,7 @@ main {
   color: var(--black);
   max-width: 2000;
   margin: 0 auto;
+  min-height: 50vh;
 }
 
 .link {
@@ -154,9 +155,11 @@ main {
   .hero-section {
     padding: 2rem;
     border-radius: 0 0 1.5rem 1.5rem;
+    height: 100vh;
   }
   .hero-inner {
     gap: 4rem;
+    height: unset;
   }
   .hero-title {
     flex-direction: column;
