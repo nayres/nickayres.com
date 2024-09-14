@@ -288,16 +288,10 @@ let skills = [
 ];
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  let aboutTabs = document.querySelectorAll('.about-tab');
-  let aboutTabContent = document.querySelectorAll('.about-tab-content');
   let philoTabs = document.querySelectorAll('.philosophy-tab');
   let philoTabContent = document.querySelectorAll('.philosophy-tab-content');
-  let philosophySection = document.querySelector(".philosophy-section");
-  let philosophySvg = document.querySelector('#philosophy-svg-desktop');
   let howSection = document.querySelector('.how-title');
   let howRowIcon = document.querySelectorAll('.row-icon');
-  let skillsRankSection = document.querySelector('.skills-rank-section');
-  let ctaSection = document.querySelector('.contact-cta-section');
   let skillRankSection = document.querySelector('.skills-rank-pan');
   let flickitySlider = document.querySelector('.skills-rank-pan');
   let flick;
@@ -398,23 +392,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }, { threshold: 1 });
   skillScrollObserver.observe(flickitySlider);
 
-  let valuesSlideObserverOptions = { threshold: 0.1 };
-  function valuesSlideCallback(entries, _) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        philosophySvg.classList.remove('slide-out');
-        philosophySvg.classList.add('slide-in');
-      } else {
-        philosophySvg.classList.add('slide-out');
-        philosophySvg.classList.remove('slide-in');
-      }
-    });
-  }
-
-  let valuesSlideObserver = new IntersectionObserver(valuesSlideCallback, valuesSlideObserverOptions);
-  valuesSlideObserver.observe(philosophySection)
-
-
   let howTitleObserverOptions = {
     threshold: 0.1,
     rootMargin: '75px'
@@ -434,24 +411,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   let howTitleScrollObserver = new IntersectionObserver(howTitleScrollCallback, howTitleObserverOptions);
   howTitleScrollObserver.observe(howSection)
-
-  let aboutSectionOptions = {
-    threshold: 0.1,
-    rootMargin: '175px'
-  };
-
-  function aboutSectionObserverCallback(entries, _) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        ctaSection.classList.add('in-view');
-      } else {
-        ctaSection.classList.remove('in-view');
-      }
-    });
-  }
-
-  let aboutSectionObserver = new IntersectionObserver(aboutSectionObserverCallback, aboutSectionOptions);
-  aboutSectionObserver.observe(skillsRankSection)
 
   function handleScroll(section) {
     return () => {
@@ -487,29 +446,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   howRowIcon.forEach(icon => {
     rotateIconsObserver.observe(icon)
   })
-
-
-  aboutTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      if (tab.classList.contains('active')) {
-        return false;
-      }
-
-      gtag('event', 'button_click', {
-        'event_category': 'about-tab-click',
-        'event_label': 'About Tab Click',
-        'value': 1
-      });
-
-      aboutTabs.forEach(t => t.classList.remove('active'));
-      aboutTabContent.forEach(tc => {
-        tc.classList.remove('active')
-      })
-
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.abouttab).classList.add('active');
-    });
-  });
 
   philoTabs.forEach(tab => {
     tab.addEventListener('click', () => {
