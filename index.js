@@ -356,26 +356,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
       },
       grabCursor: true,
       loop: true,
+      centeredSlides: true,
       breakpoints: {
         425: {
           slidesPerView: 1,
-          centeredSlides: false,
         },
         776: {
           slidesPerView: 2,
-          centeredSlides: false,
         },
         1024: {
           slidesPerView: 2,
-          centeredSlides: false,
         },
         1279: {
           slidesPerView: 3,
-          centeredSlides: true,
         },
         1441: {
           slidesPerView: 3,
-          centeredSlides: true,
         },
       },
       autoplay: {
