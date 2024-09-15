@@ -349,7 +349,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
 
     swiper = new Swiper('.skills-rank-pan', {
-      speed: 1000,
       slidesPerView: 1,
       keyboard: {
         enabled: true,
