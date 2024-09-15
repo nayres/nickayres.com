@@ -59,7 +59,7 @@ main {
   width: 150px;
   border-radius: 0.25rem;
   color: white;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -352,6 +352,7 @@ main {
   }
   .about-links > .links > .link > .link-inner {
     width: 100%;
+    font-size: 0.75rem;
   }
 }
 @media (min-width: 427px) and (max-width: 440px) {
@@ -382,6 +383,7 @@ main {
   }
   .about-links > .links > .link > .link-inner {
     width: 100%;
+    font-size: 0.75rem;
   }
 }
 @media (min-width: 441px) and (max-width: 612px) {
@@ -412,6 +414,7 @@ main {
     width: 150px;
   }
   .about-links > .links > .link > .link-inner {
+    font-size: 0.75rem;
     width: 100%;
   }
 }
@@ -443,6 +446,7 @@ main {
     width: 150px;
   }
   .about-links > .links > .link > .link-inner {
+    font-size: 0.75rem;
     width: 100%;
   }
 }
@@ -1440,6 +1444,9 @@ main {
     font-size: 1.25rem;
     font-weight: 600;
   }
+  .contact-btn-box > .link > .link-inner {
+    font-size: 0.75rem;
+  }
 }
 
 @media screen and (min-width: 360px) and (max-width: 728px) {
@@ -1459,6 +1466,9 @@ main {
   .contact-btn-box .link {
     width: 100px;
   }
+  .contact-btn-box > .link > .link-inner {
+    font-size: 0.75rem;
+  }
 }
 @media screen and (min-width: 728px) and (max-width: 1024px) {
   .contact-cta-section {
@@ -1475,6 +1485,9 @@ main {
   }
   .contact-btn-box .link {
     width: 125px;
+  }
+  .contact-btn-box > .link > .link-inner {
+    font-size: 0.75rem;
   }
 }
 

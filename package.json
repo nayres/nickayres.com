@@ -1,0 +1,25 @@
+{
+  "name": "nick-ayres-website",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.html",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayres/nickayres.com.git"
+  },
+  "author": "nick ayres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nayres/nickayres.com/issues"
+  },
+  "homepage": "https://github.com/nayres/nickayres.com#readme",
+  "devDependencies": {
+    "vite": ",^5.4.5"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  }
+}
