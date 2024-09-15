@@ -273,8 +273,8 @@ main {
 .about-section {
   position: relative;
   display: flex;
-  padding: 3rem 0;
-  max-width: 72rem;
+  padding: 3rem;
+  max-width: 78rem;
   margin: 0 auto;
 }
 
@@ -857,7 +857,7 @@ main {
   gap: 0.25rem;
   padding: 1rem;
   width: 30rem;
-  animation: tab-content-slide 700ms ease-in;
+  animation: tab-content-slide 500ms ease-out;
 }
 
 .bullet-content > h1 {
@@ -1155,6 +1155,121 @@ main {
   }
 }
 
+.blog-cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  padding-bottom: 0;
+  max-width: 78rem;
+  margin: 0 auto;
+}
+
+.blog-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem 3rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: white;
+  padding: 2rem;
+  transition: padding 600ms ease;
+}
+
+.blog-btn-box {
+  display: flex;
+}
+.blog-hr-box {
+  display: flex;
+  flex: 1;
+}
+.blog-heading-box {
+  display: flex;
+}
+
+.blog-hr-box > hr {
+  height: 1px;
+  width: 100%;
+  border: 0;
+  background-color: var(--black);
+  margin: 0;
+}
+
+.blog-heading-box > h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 360px) {
+  .blog-cta-section {
+    padding: 1.5rem;
+    padding-bottom: 0;
+  }
+  .blog-cta-section.in-view > .blog-cta {
+    padding: 1rem;
+  }
+  .blog-cta {
+    gap: 1rem;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+  .blog-hr-box {
+    display: none;
+  }
+  .blog-heading-box > h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .blog-btn-box > .link > .link-inner {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 728px) {
+  .blog-cta-section {
+    padding: 1.5rem;
+    padding-bottom: 0;
+  }
+
+  .blog-cta {
+    gap: 1rem;
+    border-radius: 1rem;
+    padding: 1.25rem 2rem;
+  }
+  .blog-heading-box > h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .blog-btn-box .link {
+    width: 100px;
+  }
+  .blog-btn-box > .link > .link-inner {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 728px) and (max-width: 1024px) {
+  .blog-cta-section {
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+  .blog-cta {
+    gap: 1rem;
+    border-radius: 1rem;
+    padding: 1.25rem 2rem;
+  }
+  .blog-heading-box > h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .blog-btn-box .link {
+    width: 125px;
+  }
+  .blog-btn-box > .link > .link-inner {
+    font-size: 0.75rem;
+  }
+}
 
 .how-section {
   display: flex;
@@ -1383,8 +1498,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0;
-  max-width: 72rem;
+  padding: 3rem;
+  max-width: 78rem;
   margin: 0 auto;
 }
 
