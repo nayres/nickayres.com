@@ -512,7 +512,6 @@ main {
 }
 
 .skills-rank-box {
-  display: flex;
   user-select: none;
   padding: 0 1rem;
 }
