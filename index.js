@@ -349,7 +349,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
 
     swiper = new Swiper('.skills-rank-pan', {
-      speed: 1000,
       slidesPerView: 1,
       keyboard: {
         enabled: true,
@@ -360,19 +359,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
       breakpoints: {
         425: {
           slidesPerView: 1,
-          speed: 500,
         },
         776: {
           slidesPerView: 2,
-          speed: 500,
         },
         1024: {
           slidesPerView: 2,
-          speed: 500,
         },
         1279: {
           slidesPerView: 3,
-          speed: 500,
         },
         1441: {
           slidesPerView: 3,
