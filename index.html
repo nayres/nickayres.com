@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
     <main>
@@ -93,12 +93,14 @@
           </div>
         </div>
       </section>
-      <section class="skills-rank-section">
+      <section class="skills-rank-section swiper">
         <div class="skills-rank-header">
           <h1>How I solve problems</h1>
           <p>Relatively ranked.</p>
         </div>
-        <div class="skills-rank-pan"></div>
+        <div class="skills-rank-pan">
+          <div class="swiper-wrapper"></div>
+        </div>
       </section>
       <section class="how-section">
         <div class="how-title">
@@ -330,7 +332,7 @@
         </div>
       </footer>
     </main>
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

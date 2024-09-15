@@ -292,15 +292,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let philoTabContent = document.querySelectorAll('.philosophy-tab-content');
   let howSection = document.querySelector('.how-title');
   let howRowIcon = document.querySelectorAll('.row-icon');
-  let skillRankSection = document.querySelector('.skills-rank-pan');
-  let flickitySlider = document.querySelector('.skills-rank-pan');
-  let flick;
+  let skillRankSection = document.querySelector('.swiper-wrapper');
+  let skillsRankPan = document.querySelector('.skills-rank-pan');
+  let swiper;
 
   function renderSkillCategories() {
     skills.forEach(skill => {
       // 'skills-rank-box'
       let skillRankBox = document.createElement('div');
       skillRankBox.classList.add('skills-rank-box');
+      skillRankBox.classList.add('swiper-slide');
 
       //'skill-category-box'
       let categoryBox = document.createElement('div');
@@ -343,17 +344,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         skillCategoryInner.appendChild(skillItem)
       });
-
+      
       categoryBox.appendChild(skillCategoryInner)
     })
 
-    flick = new Flickity(skillRankSection, {
-      cellAlign: 'center',
-      setGallerySize: false,
-      prevNextButtons: false,
-      wrapAround: true,
-      pageDots: false,
-      friction: 0.8
+    swiper = new Swiper('.skills-rank-pan', {
+      slidesPerView: 1,
+      keyboard: {
+        enabled: true,
+      },
+      grabCursor: true,
+      loop: true,
+      breakpoints: {
+        425: {
+          slidesPerView: 1,
+          centeredSlides: false,
+        },
+        776: {
+          slidesPerView: 2,
+          centeredSlides: false,
+        },
+        1024: {
+          slidesPerView: 2,
+          centeredSlides: false,
+        },
+        1279: {
+          slidesPerView: 3,
+          centeredSlides: true,
+        },
+        1441: {
+          slidesPerView: 3,
+          centeredSlides: true,
+        },
+      },
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
     });
   }
 
@@ -371,26 +398,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
   mediaQuery.addEventListener("change", handleTabletChange)
   
   handleTabletChange(mediaQuery)
+
   const skillScrollObserver = new IntersectionObserver((entries, _) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        flick.isFreeScrolling = true;
-        flick.startAnimation();
-        
-        if (isSmallReso) {
-          flick.velocity += 750 * -0.1;
-        } else {
-          flick.velocity += 1000 * -0.1;
-        }
-        flick.x += flick.velocity;
-        flick.velocity *= 0.3;
-    
 
-        flick.positionSlider();
+        skillRankSection.focus();
+        swiper.autoplay.start();
+        setTimeout(() => swiper.autoplay.stop(), 1000)
       }
     });
-  }, { threshold: 1 });
-  skillScrollObserver.observe(flickitySlider);
+  }, { threshold: 0.25 });
+  skillScrollObserver.observe(skillsRankPan);
 
   let howTitleObserverOptions = {
     threshold: 0.1,
