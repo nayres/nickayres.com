@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/nayres/nickayres.com#readme",
   "devDependencies": {
-    "vite": ",^5.4.5"
+    "vite": "^5.4.5"
   },
   "scripts": {
     "dev": "vite",
