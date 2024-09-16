@@ -382,19 +382,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   renderSkillCategories()
 
-  const mediaQuery = window.matchMedia('(max-width: 768px)')
-
-  let isSmallReso = false;
-  function handleTabletChange(e) {
-    if (e.matches) {
-      isSmallReso = true;
-    }
-  }
-  
-  mediaQuery.addEventListener("change", handleTabletChange)
-  
-  handleTabletChange(mediaQuery)
-
   const skillScrollObserver = new IntersectionObserver((entries, _) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -467,12 +454,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       if (tab.classList.contains('active')) {
         return false;
       }
-
-      gtag('event', 'button_click', {
-        'event_category': 'philo-tab-click',
-        'event_label': 'Philosophy Tab Click',
-        'value': 1
-      });
 
       philoTabs.forEach(t => t.classList.remove('active'));
       philoTabContent.forEach(tc => {
