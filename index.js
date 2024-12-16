@@ -102,11 +102,11 @@ let skills = [
     subCatergories: [
       {
         label: 'PostgreSQL',
-        rank: 5,
+        rank: 4,
       },
       {
-        label: 'CouchDB',
-        rank: 4,
+        label: 'DynamoDB',
+        rank: 5,
       },
       {
         label: 'MySQL',
@@ -184,17 +184,17 @@ let skills = [
         rank: 4,
       },
       {
-        label: 'NGINX',
-        rank: 5,
+        label: 'AWS EC2',
+        rank: 4,
       },
       {
-        label: 'Docker',
+        label: 'AWS ECS',
         rank: 4,
       },
     ]
   },
   {
-    label: 'Cloud Computing',
+    label: 'Cloud Providers',
     subCatergories: [
       {
         label: 'AWS',
@@ -203,7 +203,11 @@ let skills = [
       {
         label: 'Azure',
         rank: 5,
-      }
+      },
+      {
+        label: 'GCP',
+        rank: 3,
+      },
     ]
   },
   {
@@ -276,11 +280,7 @@ let skills = [
         rank: 5,
       },
       {
-        label: 'Scale/Avail',
-        rank: 5,
-      },
-      {
-        label: 'HTTP/HTTPS',
+        label: 'Microservices',
         rank: 5,
       },
     ]
